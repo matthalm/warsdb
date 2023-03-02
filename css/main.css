@@ -1,0 +1,96 @@
+#header {
+    position: sticky;
+    top: 0;
+    display: block;
+    text-align: center;
+    font-family: Arial Narrow;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    z-index: 10;
+}
+
+#header a {
+    color: black;
+}
+
+#controls {
+    display: block;
+    font-size: .8em;
+    font-family: Arial Narrow;
+    background-color: white;
+    text-align: center;
+}
+
+fieldset {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    border: 0px;
+    padding: 5px;
+}
+
+legend {
+    background-color:white;
+    border: 1px solid;
+    padding: 2px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+select, button {
+    padding: 2px;
+    margin: 2px;
+    font-family: Arial Narrow;
+}
+
+table td {
+    vertical-align: top;
+}
+
+/* CARDS */
+
+#card-container {
+    text-align: center;
+}
+
+#card-container .card {
+    display: none;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.35); 
+}
+
+#card-container .card img {
+    width: 250px;
+    height: 350px;
+    margin: 0 0 -4px 0;
+}
+
+#card-container .lcard {
+    width: 350px;
+    height: 250px;
+    display: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.35); 
+      margin-top: 60px;
+      margin-bottom: 60px;
+      margin-left: -40px;
+      margin-right: -40px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    z-index: 1;
+}
+
+#card-container .lcard img {
+    width: 350px;
+    height: 250px;
+    margin: 0 0 -4px 0;
+}
