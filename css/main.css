@@ -1,3 +1,5 @@
+/* HEADER AND FILTER CONTROLS */
+
 #header {
     position: sticky;
     top: 0;
@@ -46,10 +48,6 @@ select, button {
     font-family: Arial Narrow;
 }
 
-table td {
-    vertical-align: top;
-}
-
 /* CARDS */
 
 #card-container {
@@ -71,8 +69,6 @@ table td {
 }
 
 #card-container .lcard {
-    width: 350px;
-    height: 250px;
     display: none;
     border-radius: 10px;
     overflow: hidden;
