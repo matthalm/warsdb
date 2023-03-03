@@ -54,4 +54,10 @@ function filter() {
     for (let i = 0; i < cards.length; i++) {
         cards[i].style.display = "inline-block";
     }
+
+    if ( cards.length == 1 ) {
+        document.getElementById("results").innerHTML = cards.length + " result";
+    } else {
+        document.getElementById("results").innerHTML = cards.length + " results";
+    }
 }
