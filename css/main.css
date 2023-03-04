@@ -48,6 +48,14 @@ select, button {
     font-family: Arial Narrow;
 }
 
+.subfilter {
+    display: none;
+}
+
+#results {
+    width: 250px;
+}
+
 /* CARDS */
 
 #card-container {

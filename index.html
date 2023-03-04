@@ -29,7 +29,7 @@
 			<input type="checkbox" id="toggle-Eye" style="cursor: not-allowed" onclick="return false;"><label for="toggle-Eye" style="cursor: not-allowed">Eye of Insight</label>
 		</fieldset>
 		<fieldset>
-			<select id="select-faction">
+			<select id="select-faction" onchange="subselect();">
 				<option value="">All Factions</option>
 				<option value=".faction-earther">Earther</option>
 				<option value=".faction-gongen">Gongen</option>
@@ -37,8 +37,8 @@
 				<option value=".faction-quay">Quay</option>
 				<option value=".faction-shi">Shi</option>
 				<option value=".faction-independent">Independent</option>
-			</select></br>
-			<select id="select-type">
+			</select><br>
+			<select id="select-type" onchange="subselect();">
 				<option value="">All Cardtypes</option>
 				<option value=".type-asset">Asset</option>
 				<option value=".type-character">Character</option>
@@ -49,7 +49,118 @@
 				<option value=".type-ship">Ship</option>
 				<option value=".type-vehicle">Vehicle</option>
 				<option value=".type-weapon">Weapon</option>
-			</select></br>
+			</select>
+			<select class="subfilter" id="earther-tags">
+				<option value="">All Tags</option>
+				<option value=".capital">Capital</option>
+				<option value=".cgc">CGC</option>
+				<option value=".cisyn">CiSyn</option>
+				<option value=".fedgrav">FedGrav</option>
+				<option value=".fighter">Fighter</option>
+				<option value=".icom">iCom</option>
+				<option value=".infiltrator">Infiltrator</option>
+				<option value=".inverter">Inverter</option>
+				<option value=".kizen">Kizen</option>
+				<option value=".merchant">Merchant</option>
+				<option value=".tech">Tech</option>
+				<option value=".unit">Unit</option>
+				<option value=".warrior">Warrior</option>
+				<option value=".xelabs">XeLabs</option>
+			</select>
+			<select class="subfilter" id="gongen-tags">
+				<option value="">All Tags</option>
+				<option value=".bot">Bot</option>
+				<option value=".capital">Capital</option>
+				<option value=".chijo">Chijo</option>
+				<option value=".deigan">Deigan</option>
+				<option value=".fighter">Fighter</option>
+				<option value=".ikazuchi">Ikazuchi</option>
+				<option value=".inverter">Inverter</option>
+				<option value=".kizen">Kizen</option>
+				<option value=".shikami">Shikami</option>
+				<option value=".tech">Tech</option>
+				<option value=".tenno">Tenno</option>
+				<option value=".unit">Unit</option>
+				<option value=".warrior">Warrior</option>
+			</select>
+			<select class="subfilter" id="maverick-tags">
+				<option value="">All Tags</option>
+				<option value=".accord">Accord</option>
+				<option value=".bot">Bot</option>
+				<option value=".capital">Capital</option>
+				<option value=".cartel">Cartel</option>
+				<option value=".cogs">Cogs</option>
+				<option value=".fighter">Fighter</option>
+				<option value=".hellcats">Hellcats</option>
+				<option value=".inverter">Inverter</option>
+				<option value=".kizen">Kizen</option>
+				<option value=".knaves">Knaves</option>
+				<option value=".merchant">Merchant</option>
+				<option value=".nest">Nest</option>
+				<option value=".rogue">Rogue</option>
+				<option value=".tech">Tech</option>
+				<option value=".unit">Unit</option>
+				<option value=".warrior">Warrior</option>
+			</select>
+			<select class="subfilter" id="shi-tags">
+				<option value="">All Tags</option>
+				<option value=".anant">Anant</option>
+				<option value=".capital">Capital</option>
+				<option value=".crown">Crown</option>
+				<option value=".damir">Damir</option>
+				<option value=".fighter">Fighter</option>
+				<option value=".inverter">Inverter</option>
+				<option value=".kizen">Kizen</option>
+				<option value=".merchant">Merchant</option>
+				<option value=".predator">Predator</option>
+				<option value=".sudeva">Sudeva</option>
+				<option value=".tech">Tech</option>
+				<option value=".tilak">Tilak</option>
+				<option value=".unit">Unit</option>
+				<option value=".vishal">Vishal</option>
+				<option value=".warrior">Warrior</option>
+			</select>
+			<select class="subfilter" id="quay-tags">
+				<option value="">All Tags</option>
+				<option value=".capital">Capital</option>
+				<option value=".fighter">Fighter</option>
+				<option value=".infiltrator">Infiltrator</option>
+				<option value=".inverter">Inverter</option>
+				<option value=".katal">Katal</option>
+				<option value=".kizen">Kizen</option>
+				<option value=".luhus">Luhus</option>
+				<option value=".makal">Makal</option>
+				<option value=".predator">Predator</option>
+				<option value=".qurim">Qurim</option>
+				<option value=".tahka">Tahka</option>
+				<option value=".tech">Tech</option>
+				<option value=".unit">Unit</option>
+				<option value=".warrior">Warrior</option>
+			</select>
+			<select class="subfilter" id="independent-tags">
+				<option value="">All Tags</option>
+				<option value=".bot">Bot</option>
+				<option value=".capital">Capital</option>
+				<option value=".fighter">Fighter</option>
+				<option value=".kizen">Kizen</option>
+				<option value=".predator">Predator</option>
+				<option value=".rogue">Rogue</option>
+				<option value=".tech">Tech</option>
+				<option value=".unit">Unit</option>
+				<option value=".warrior">Warrior</option>
+			</select>
+			<select class="subfilter" id="weapon-tags">
+				<option value="">All Tags</option>
+				<option value=".explosive">Explosive</option>
+				<option value=".melee">Melee</option>
+				<option value=".ranged">Ranged</option>
+			</select>
+			<select class="subfilter" id="asset-tags">
+				<option value="">All Tags</option>
+				<option value=".evidence">Evidence</option>
+				<option value=".relic">Relic</option>
+				<option value=".stockpile">Stockpile</option>
+			</select><br>
 			<button type="button" onclick="filter()">Filter</button>
 			<button id="reset">Reset</button><br>
 			<div id="results"></div>
@@ -64,660 +175,660 @@
 		<div class="card set-1 faction-earther type-asset"><img loading="lazy" src="img/1/WARS-EN01001.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01002.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01003.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01004.jpg"></div>
-		<div class="card set-1 faction-earther type-ship"><img loading="lazy" src="img/1/WARS-EN01005.jpg"></div>
+		<div class="card set-1 faction-earther type-character cisyn tech unit"><img loading="lazy" src="img/1/WARS-EN01004.jpg"></div>
+		<div class="card set-1 faction-earther type-ship icom capital"><img loading="lazy" src="img/1/WARS-EN01005.jpg"></div>
 		<div class="card set-1 faction-earther type-asset"><img loading="lazy" src="img/1/WARS-EN01006.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01007.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01008.jpg"></div>
+		<div class="card set-1 faction-earther type-character cgc warrior unit"><img loading="lazy" src="img/1/WARS-EN01007.jpg"></div>
+		<div class="card set-1 faction-earther type-character cisyn infiltrator unit"><img loading="lazy" src="img/1/WARS-EN01008.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01009.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01010.jpg"></div>
+		<div class="card set-1 faction-earther type-character icom unit"><img loading="lazy" src="img/1/WARS-EN01010.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01011.jpg"></div>
-		<div class="card set-1 faction-earther type-ship"><img loading="lazy" src="img/1/WARS-EN01012.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01013.jpg"></div>
+		<div class="card set-1 faction-earther type-ship icom fighter"><img loading="lazy" src="img/1/WARS-EN01012.jpg"></div>
+		<div class="card set-1 faction-earther type-character cgc warrior unit"><img loading="lazy" src="img/1/WARS-EN01013.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01014.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01015.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01016.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01017.jpg"></div>
-		<div class="card set-1 faction-earther type-ship"><img loading="lazy" src="img/1/WARS-EN01018.jpg"></div>
-		<div class="card set-1 faction-earther type-weapon"><img loading="lazy" src="img/1/WARS-EN01019.jpg"></div>
+		<div class="card set-1 faction-earther type-character cgc warrior unit"><img loading="lazy" src="img/1/WARS-EN01017.jpg"></div>
+		<div class="card set-1 faction-earther type-ship icom capital"><img loading="lazy" src="img/1/WARS-EN01018.jpg"></div>
+		<div class="card set-1 faction-earther type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01019.jpg"></div>
 		<div class="card set-1 faction-earther type-asset"><img loading="lazy" src="img/1/WARS-EN01020.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01021.jpg"></div>
 		<div class="card set-1 faction-earther type-asset"><img loading="lazy" src="img/1/WARS-EN01022.jpg"></div>
-		<div class="card set-1 faction-earther type-weapon"><img loading="lazy" src="img/1/WARS-EN01023.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01024.jpg"></div>
-		<div class="card set-1 faction-earther type-vehicle"><img loading="lazy" src="img/1/WARS-EN01025.jpg"></div>
-		<div class="card set-1 faction-earther type-vehicle"><img loading="lazy" src="img/1/WARS-EN01026.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01027.jpg"></div>
+		<div class="card set-1 faction-earther type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01023.jpg"></div>
+		<div class="card set-1 faction-earther type-character fedgrav warrior unit"><img loading="lazy" src="img/1/WARS-EN01024.jpg"></div>
+		<div class="card set-1 faction-earther type-vehicle fedgrav unit"><img loading="lazy" src="img/1/WARS-EN01025.jpg"></div>
+		<div class="card set-1 faction-earther type-vehicle fedgrav unit"><img loading="lazy" src="img/1/WARS-EN01026.jpg"></div>
+		<div class="card set-1 faction-earther type-character kizen icom unit"><img loading="lazy" src="img/1/WARS-EN01027.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01028.jpg"></div>
-		<div class="card set-1 faction-earther type-vehicle"><img loading="lazy" src="img/1/WARS-EN01029.jpg"></div>
-		<div class="card set-1 faction-earther type-ship"><img loading="lazy" src="img/1/WARS-EN01030.jpg"></div>
-		<div class="card set-1 faction-earther type-ship"><img loading="lazy" src="img/1/WARS-EN01031.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01032.jpg"></div>
-		<div class="card set-1 faction-earther type-vehicle"><img loading="lazy" src="img/1/WARS-EN01033.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01034.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01035.jpg"></div>
-		<div class="card set-1 faction-earther type-ship"><img loading="lazy" src="img/1/WARS-EN01036.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01037.jpg"></div>
-		<div class="card set-1 faction-earther type-weapon"><img loading="lazy" src="img/1/WARS-EN01038.jpg"></div>
-		<div class="card set-1 faction-earther type-ship"><img loading="lazy" src="img/1/WARS-EN01039.jpg"></div>
+		<div class="card set-1 faction-earther type-vehicle fedgrav unit"><img loading="lazy" src="img/1/WARS-EN01029.jpg"></div>
+		<div class="card set-1 faction-earther type-ship icom fighter"><img loading="lazy" src="img/1/WARS-EN01030.jpg"></div>
+		<div class="card set-1 faction-earther type-ship icom fighter"><img loading="lazy" src="img/1/WARS-EN01031.jpg"></div>
+		<div class="card set-1 faction-earther type-character cgc warrior unit"><img loading="lazy" src="img/1/WARS-EN01032.jpg"></div>
+		<div class="card set-1 faction-earther type-vehicle fedgrav unit"><img loading="lazy" src="img/1/WARS-EN01033.jpg"></div>
+		<div class="card set-1 faction-earther type-character cisyn infiltrator unit"><img loading="lazy" src="img/1/WARS-EN01034.jpg"></div>
+		<div class="card set-1 faction-earther type-character kizen cgc unit"><img loading="lazy" src="img/1/WARS-EN01035.jpg"></div>
+		<div class="card set-1 faction-earther type-ship icom capital"><img loading="lazy" src="img/1/WARS-EN01036.jpg"></div>
+		<div class="card set-1 faction-earther type-character cisyn tech unit"><img loading="lazy" src="img/1/WARS-EN01037.jpg"></div>
+		<div class="card set-1 faction-earther type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01038.jpg"></div>
+		<div class="card set-1 faction-earther type-ship icom fighter"><img loading="lazy" src="img/1/WARS-EN01039.jpg"></div>
 		<div class="card set-1 faction-earther type-asset"><img loading="lazy" src="img/1/WARS-EN01040.jpg"></div>
 		<div class="card set-1 faction-earther type-asset"><img loading="lazy" src="img/1/WARS-EN01041.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01042.jpg"></div>
+		<div class="card set-1 faction-earther type-character cisyn infiltrator unit"><img loading="lazy" src="img/1/WARS-EN01042.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01043.jpg"></div>
-		<div class="card set-1 faction-earther type-weapon"><img loading="lazy" src="img/1/WARS-EN01044.jpg"></div>
+		<div class="card set-1 faction-earther type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01044.jpg"></div>
 		<div class="card set-1 faction-earther type-asset"><img loading="lazy" src="img/1/WARS-EN01045.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01046.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01047.jpg"></div>
-		<div class="card set-1 faction-earther type-ship"><img loading="lazy" src="img/1/WARS-EN01048.jpg"></div>
+		<div class="card set-1 faction-earther type-ship icom capital"><img loading="lazy" src="img/1/WARS-EN01048.jpg"></div>
 		<div class="card set-1 faction-earther type-interrupt"><img loading="lazy" src="img/1/WARS-EN01049.jpg"></div>
 		<div class="card set-1 faction-earther type-asset"><img loading="lazy" src="img/1/WARS-EN01050.jpg"></div>
 		<div class="card set-1 faction-earther type-asset"><img loading="lazy" src="img/1/WARS-EN01051.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01052.jpg"></div>
-		<div class="card set-1 faction-earther type-ship"><img loading="lazy" src="img/1/WARS-EN01053.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01054.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01055.jpg"></div>
+		<div class="card set-1 faction-earther type-character cgc warrior unit"><img loading="lazy" src="img/1/WARS-EN01052.jpg"></div>
+		<div class="card set-1 faction-earther type-ship xelabs fighter"><img loading="lazy" src="img/1/WARS-EN01053.jpg"></div>
+		<div class="card set-1 faction-earther type-character icom unit"><img loading="lazy" src="img/1/WARS-EN01054.jpg"></div>
+		<div class="card set-1 faction-earther type-character cgc warrior unit"><img loading="lazy" src="img/1/WARS-EN01055.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01056.jpg"></div>
 		<div class="card set-1 faction-gongen type-order"><img loading="lazy" src="img/1/WARS-EN01057.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01058.jpg"></div>
-		<div class="card set-1 faction-gongen type-weapon"><img loading="lazy" src="img/1/WARS-EN01059.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01060.jpg"></div>
+		<div class="card set-1 faction-gongen type-weapon melee"><img loading="lazy" src="img/1/WARS-EN01059.jpg"></div>
+		<div class="card set-1 faction-gongen type-character chijo warrior unit"><img loading="lazy" src="img/1/WARS-EN01060.jpg"></div>
 		<div class="card set-1 faction-gongen type-interrupt"><img loading="lazy" src="img/1/WARS-EN01061.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01062.jpg"></div>
 		<div class="card set-1 faction-gongen type-interrupt"><img loading="lazy" src="img/1/WARS-EN01063.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01064.jpg"></div>
-		<div class="card set-1 faction-gongen type-nobot"><img loading="lazy" src="img/1/WARS-EN01065.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01066.jpg"></div>
+		<div class="card set-1 faction-gongen type-nobot deigan bot unit"><img loading="lazy" src="img/1/WARS-EN01065.jpg"></div>
+		<div class="card set-1 faction-gongen type-character deigan warrior unit"><img loading="lazy" src="img/1/WARS-EN01066.jpg"></div>
 		<div class="card set-1 faction-gongen type-interrupt"><img loading="lazy" src="img/1/WARS-EN01067.jpg"></div>
-		<div class="card set-1 faction-gongen type-weapon"><img loading="lazy" src="img/1/WARS-EN01068.jpg"></div>
-		<div class="card set-1 faction-gongen type-vehicle"><img loading="lazy" src="img/1/WARS-EN01069.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01070.jpg"></div>
-		<div class="card set-1 faction-gongen type-ship"><img loading="lazy" src="img/1/WARS-EN01071.jpg"></div>
-		<div class="card set-1 faction-gongen type-vehicle"><img loading="lazy" src="img/1/WARS-EN01072.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01073.jpg"></div>
+		<div class="card set-1 faction-gongen type-weapon melee"><img loading="lazy" src="img/1/WARS-EN01068.jpg"></div>
+		<div class="card set-1 faction-gongen type-vehicle deigan unit"><img loading="lazy" src="img/1/WARS-EN01069.jpg"></div>
+		<div class="card set-1 faction-gongen type-character chijo tech unit"><img loading="lazy" src="img/1/WARS-EN01070.jpg"></div>
+		<div class="card set-1 faction-gongen type-ship tenno capital"><img loading="lazy" src="img/1/WARS-EN01071.jpg"></div>
+		<div class="card set-1 faction-gongen type-vehicle ikazuchi unit"><img loading="lazy" src="img/1/WARS-EN01072.jpg"></div>
+		<div class="card set-1 faction-gongen type-character kizen deigan unit"><img loading="lazy" src="img/1/WARS-EN01073.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01074.jpg"></div>
-		<div class="card set-1 faction-gongen type-nobot"><img loading="lazy" src="img/1/WARS-EN01075.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01076.jpg"></div>
-		<div class="card set-1 faction-gongen type-vehicle"><img loading="lazy" src="img/1/WARS-EN01077.jpg"></div>
+		<div class="card set-1 faction-gongen type-nobot ikazuchi bot unit"><img loading="lazy" src="img/1/WARS-EN01075.jpg"></div>
+		<div class="card set-1 faction-gongen type-character ikazuchi warrior unit"><img loading="lazy" src="img/1/WARS-EN01076.jpg"></div>
+		<div class="card set-1 faction-gongen type-vehicle ikazuchi unit"><img loading="lazy" src="img/1/WARS-EN01077.jpg"></div>
 		<div class="card set-1 faction-gongen type-interrupt"><img loading="lazy" src="img/1/WARS-EN01078.jpg"></div>
-		<div class="card set-1 faction-gongen type-ship"><img loading="lazy" src="img/1/WARS-EN01079.jpg"></div>
-		<div class="card set-1 faction-gongen type-ship"><img loading="lazy" src="img/1/WARS-EN01080.jpg"></div>
+		<div class="card set-1 faction-gongen type-ship tenno capital"><img loading="lazy" src="img/1/WARS-EN01079.jpg"></div>
+		<div class="card set-1 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/1/WARS-EN01080.jpg"></div>
 		<div class="card set-1 faction-gongen type-interrupt"><img loading="lazy" src="img/1/WARS-EN01081.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01082.jpg"></div>
-		<div class="card set-1 faction-gongen type-ship"><img loading="lazy" src="img/1/WARS-EN01083.jpg"></div>
-		<div class="card set-1 faction-gongen type-ship"><img loading="lazy" src="img/1/WARS-EN01084.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01085.jpg"></div>
+		<div class="card set-1 faction-gongen type-character kizen ikazuchi unit"><img loading="lazy" src="img/1/WARS-EN01082.jpg"></div>
+		<div class="card set-1 faction-gongen type-ship tenno capital"><img loading="lazy" src="img/1/WARS-EN01083.jpg"></div>
+		<div class="card set-1 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/1/WARS-EN01084.jpg"></div>
+		<div class="card set-1 faction-gongen type-character chijo warrior unit"><img loading="lazy" src="img/1/WARS-EN01085.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01086.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01087.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01088.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01089.jpg"></div>
-		<div class="card set-1 faction-gongen type-weapon"><img loading="lazy" src="img/1/WARS-EN01090.jpg"></div>
+		<div class="card set-1 faction-gongen type-weapon melee"><img loading="lazy" src="img/1/WARS-EN01090.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01091.jpg"></div>
-		<div class="card set-1 faction-gongen type-weapon"><img loading="lazy" src="img/1/WARS-EN01092.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01093.jpg"></div>
+		<div class="card set-1 faction-gongen type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01092.jpg"></div>
+		<div class="card set-1 faction-gongen type-character chijo tech unit"><img loading="lazy" src="img/1/WARS-EN01093.jpg"></div>
 		<div class="card set-1 faction-gongen type-interrupt"><img loading="lazy" src="img/1/WARS-EN01094.jpg"></div>
 		<div class="card set-1 faction-gongen type-order"><img loading="lazy" src="img/1/WARS-EN01095.jpg"></div>
 		<div class="card set-1 faction-gongen type-asset"><img loading="lazy" src="img/1/WARS-EN01096.jpg"></div>
 		<div class="card set-1 faction-gongen type-order"><img loading="lazy" src="img/1/WARS-EN01097.jpg"></div>
-		<div class="card set-1 faction-gongen type-nobot"><img loading="lazy" src="img/1/WARS-EN01098.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01099.jpg"></div>
-		<div class="card set-1 faction-gongen type-vehicle"><img loading="lazy" src="img/1/WARS-EN01100.jpg"></div>
-		<div class="card set-1 faction-gongen type-character"><img loading="lazy" src="img/1/WARS-EN01101.jpg"></div>
+		<div class="card set-1 faction-gongen type-nobot shikami bot unit"><img loading="lazy" src="img/1/WARS-EN01098.jpg"></div>
+		<div class="card set-1 faction-gongen type-character shikami warrior unit"><img loading="lazy" src="img/1/WARS-EN01099.jpg"></div>
+		<div class="card set-1 faction-gongen type-vehicle shikami unit"><img loading="lazy" src="img/1/WARS-EN01100.jpg"></div>
+		<div class="card set-1 faction-gongen type-character shikami warrior unit"><img loading="lazy" src="img/1/WARS-EN01101.jpg"></div>
 		<div class="card set-1 faction-gongen type-order"><img loading="lazy" src="img/1/WARS-EN01102.jpg"></div>
 		<div class="card set-1 faction-gongen type-interrupt"><img loading="lazy" src="img/1/WARS-EN01103.jpg"></div>
 		<div class="card set-1 faction-gongen type-interrupt"><img loading="lazy" src="img/1/WARS-EN01104.jpg"></div>
-		<div class="card set-1 faction-gongen type-vehicle"><img loading="lazy" src="img/1/WARS-EN01105.jpg"></div>
-		<div class="card set-1 faction-gongen type-weapon"><img loading="lazy" src="img/1/WARS-EN01106.jpg"></div>
-		<div class="card set-1 faction-gongen type-ship"><img loading="lazy" src="img/1/WARS-EN01107.jpg"></div>
-		<div class="card set-1 faction-gongen type-ship"><img loading="lazy" src="img/1/WARS-EN01108.jpg"></div>
-		<div class="card set-1 faction-gongen type-ship"><img loading="lazy" src="img/1/WARS-EN01109.jpg"></div>
-		<div class="card set-1 faction-gongen type-ship"><img loading="lazy" src="img/1/WARS-EN01110.jpg"></div>
+		<div class="card set-1 faction-gongen type-vehicle shikami unit"><img loading="lazy" src="img/1/WARS-EN01105.jpg"></div>
+		<div class="card set-1 faction-gongen type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01106.jpg"></div>
+		<div class="card set-1 faction-gongen type-ship tenno capital"><img loading="lazy" src="img/1/WARS-EN01107.jpg"></div>
+		<div class="card set-1 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/1/WARS-EN01108.jpg"></div>
+		<div class="card set-1 faction-gongen type-ship tenno capital"><img loading="lazy" src="img/1/WARS-EN01109.jpg"></div>
+		<div class="card set-1 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/1/WARS-EN01110.jpg"></div>
 		<div class="card set-1 faction-maverick type-asset"><img loading="lazy" src="img/1/WARS-EN01111.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01112.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01113.jpg"></div>
-		<div class="card set-1 faction-maverick type-vehicle"><img loading="lazy" src="img/1/WARS-EN01114.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01115.jpg"></div>
+		<div class="card set-1 faction-maverick type-character kizen nest unit"><img loading="lazy" src="img/1/WARS-EN01112.jpg"></div>
+		<div class="card set-1 faction-maverick type-character cartel merchant unit"><img loading="lazy" src="img/1/WARS-EN01113.jpg"></div>
+		<div class="card set-1 faction-maverick type-vehicle cogs unit"><img loading="lazy" src="img/1/WARS-EN01114.jpg"></div>
+		<div class="card set-1 faction-maverick type-character cartel tech unit"><img loading="lazy" src="img/1/WARS-EN01115.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01116.jpg"></div>
-		<div class="card set-1 faction-maverick type-weapon"><img loading="lazy" src="img/1/WARS-EN01117.jpg"></div>
-		<div class="card set-1 faction-maverick type-weapon"><img loading="lazy" src="img/1/WARS-EN01118.jpg"></div>
-		<div class="card set-1 faction-maverick type-vehicle"><img loading="lazy" src="img/1/WARS-EN01119.jpg"></div>
-		<div class="card set-1 faction-maverick type-weapon"><img loading="lazy" src="img/1/WARS-EN01120.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01121.jpg"></div>
+		<div class="card set-1 faction-maverick type-weapon explosive"><img loading="lazy" src="img/1/WARS-EN01117.jpg"></div>
+		<div class="card set-1 faction-maverick type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01118.jpg"></div>
+		<div class="card set-1 faction-maverick type-vehicle cogs unit"><img loading="lazy" src="img/1/WARS-EN01119.jpg"></div>
+		<div class="card set-1 faction-maverick type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01120.jpg"></div>
+		<div class="card set-1 faction-maverick type-character nest rogue unit"><img loading="lazy" src="img/1/WARS-EN01121.jpg"></div>
 		<div class="card set-1 faction-maverick type-asset"><img loading="lazy" src="img/1/WARS-EN01122.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01123.jpg"></div>
 		<div class="card set-1 faction-maverick type-order"><img loading="lazy" src="img/1/WARS-EN01124.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01125.jpg"></div>
-		<div class="card set-1 faction-maverick type-vehicle"><img loading="lazy" src="img/1/WARS-EN01126.jpg"></div>
+		<div class="card set-1 faction-maverick type-vehicle cartel unit"><img loading="lazy" src="img/1/WARS-EN01126.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01127.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01128.jpg"></div>
-		<div class="card set-1 faction-maverick type-ship"><img loading="lazy" src="img/1/WARS-EN01129.jpg"></div>
+		<div class="card set-1 faction-maverick type-character knaves bot unit"><img loading="lazy" src="img/1/WARS-EN01128.jpg"></div>
+		<div class="card set-1 faction-maverick type-ship cartel inverter fighter"><img loading="lazy" src="img/1/WARS-EN01129.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01130.jpg"></div>
-		<div class="card set-1 faction-maverick type-ship"><img loading="lazy" src="img/1/WARS-EN01131.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01132.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01133.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01134.jpg"></div>
-		<div class="card set-1 faction-maverick type-weapon"><img loading="lazy" src="img/1/WARS-EN01135.jpg"></div>
+		<div class="card set-1 faction-maverick type-ship accord fighter"><img loading="lazy" src="img/1/WARS-EN01131.jpg"></div>
+		<div class="card set-1 faction-maverick type-character hellcats unit"><img loading="lazy" src="img/1/WARS-EN01132.jpg"></div>
+		<div class="card set-1 faction-maverick type-character kizen knaves unit"><img loading="lazy" src="img/1/WARS-EN01133.jpg"></div>
+		<div class="card set-1 faction-maverick type-character hellcats unit"><img loading="lazy" src="img/1/WARS-EN01134.jpg"></div>
+		<div class="card set-1 faction-maverick type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01135.jpg"></div>
 		<div class="card set-1 faction-maverick type-order"><img loading="lazy" src="img/1/WARS-EN01136.jpg"></div>
 		<div class="card set-1 faction-maverick type-asset"><img loading="lazy" src="img/1/WARS-EN01137.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01138.jpg"></div>
-		<div class="card set-1 faction-maverick type-ship"><img loading="lazy" src="img/1/WARS-EN01139.jpg"></div>
-		<div class="card set-1 faction-maverick type-ship"><img loading="lazy" src="img/1/WARS-EN01140.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01141.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01142.jpg"></div>
+		<div class="card set-1 faction-maverick type-character nest rogue unit"><img loading="lazy" src="img/1/WARS-EN01138.jpg"></div>
+		<div class="card set-1 faction-maverick type-ship knaves fighter"><img loading="lazy" src="img/1/WARS-EN01139.jpg"></div>
+		<div class="card set-1 faction-maverick type-ship hellcats inverter fighter"><img loading="lazy" src="img/1/WARS-EN01140.jpg"></div>
+		<div class="card set-1 faction-maverick type-character hellcats unit"><img loading="lazy" src="img/1/WARS-EN01141.jpg"></div>
+		<div class="card set-1 faction-maverick type-character cartel tech unit"><img loading="lazy" src="img/1/WARS-EN01142.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01143.jpg"></div>
-		<div class="card set-1 faction-maverick type-ship"><img loading="lazy" src="img/1/WARS-EN01144.jpg"></div>
+		<div class="card set-1 faction-maverick type-ship knaves inverter fighter"><img loading="lazy" src="img/1/WARS-EN01144.jpg"></div>
 		<div class="card set-1 faction-maverick type-asset"><img loading="lazy" src="img/1/WARS-EN01145.jpg"></div>
-		<div class="card set-1 faction-maverick type-ship"><img loading="lazy" src="img/1/WARS-EN01146.jpg"></div>
-		<div class="card set-1 faction-maverick type-ship"><img loading="lazy" src="img/1/WARS-EN01147.jpg"></div>
-		<div class="card set-1 faction-maverick type-ship"><img loading="lazy" src="img/1/WARS-EN01148.jpg"></div>
+		<div class="card set-1 faction-maverick type-ship hellcats inverter fighter"><img loading="lazy" src="img/1/WARS-EN01146.jpg"></div>
+		<div class="card set-1 faction-maverick type-ship knaves capital"><img loading="lazy" src="img/1/WARS-EN01147.jpg"></div>
+		<div class="card set-1 faction-maverick type-ship knaves inverter fighter"><img loading="lazy" src="img/1/WARS-EN01148.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01149.jpg"></div>
 		<div class="card set-1 faction-maverick type-asset"><img loading="lazy" src="img/1/WARS-EN01150.jpg"></div>
 		<div class="card set-1 faction-maverick type-order"><img loading="lazy" src="img/1/WARS-EN01151.jpg"></div>
-		<div class="card set-1 faction-maverick type-vehicle"><img loading="lazy" src="img/1/WARS-EN01152.jpg"></div>
-		<div class="card set-1 faction-maverick type-weapon"><img loading="lazy" src="img/1/WARS-EN01153.jpg"></div>
+		<div class="card set-1 faction-maverick type-vehicle accord unit"><img loading="lazy" src="img/1/WARS-EN01152.jpg"></div>
+		<div class="card set-1 faction-maverick type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01153.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01154.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01155.jpg"></div>
-		<div class="card set-1 faction-maverick type-vehicle"><img loading="lazy" src="img/1/WARS-EN01156.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01157.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01158.jpg"></div>
+		<div class="card set-1 faction-maverick type-character accord rogue unit"><img loading="lazy" src="img/1/WARS-EN01155.jpg"></div>
+		<div class="card set-1 faction-maverick type-vehicle hellcats unit"><img loading="lazy" src="img/1/WARS-EN01156.jpg"></div>
+		<div class="card set-1 faction-maverick type-character nest rogue unit"><img loading="lazy" src="img/1/WARS-EN01157.jpg"></div>
+		<div class="card set-1 faction-maverick type-character kizen cartel unit"><img loading="lazy" src="img/1/WARS-EN01158.jpg"></div>
 		<div class="card set-1 faction-maverick type-asset"><img loading="lazy" src="img/1/WARS-EN01159.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01160.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01161.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01162.jpg"></div>
+		<div class="card set-1 faction-maverick type-character cartel tech unit"><img loading="lazy" src="img/1/WARS-EN01162.jpg"></div>
 		<div class="card set-1 faction-maverick type-interrupt"><img loading="lazy" src="img/1/WARS-EN01163.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01164.jpg"></div>
-		<div class="card set-1 faction-maverick type-ship"><img loading="lazy" src="img/1/WARS-EN01165.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01166.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01167.jpg"></div>
-		<div class="card set-1 faction-shi type-weapon"><img loading="lazy" src="img/1/WARS-EN01168.jpg"></div>
+		<div class="card set-1 faction-maverick type-character cartel bot unit"><img loading="lazy" src="img/1/WARS-EN01164.jpg"></div>
+		<div class="card set-1 faction-maverick type-ship accord inverter fighter"><img loading="lazy" src="img/1/WARS-EN01165.jpg"></div>
+		<div class="card set-1 faction-shi type-character crown anant unit"><img loading="lazy" src="img/1/WARS-EN01166.jpg"></div>
+		<div class="card set-1 faction-shi type-character anant tech unit"><img loading="lazy" src="img/1/WARS-EN01167.jpg"></div>
+		<div class="card set-1 faction-shi type-weapon melee ranged"><img loading="lazy" src="img/1/WARS-EN01168.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01169.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01170.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01171.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01172.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01173.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01174.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01175.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01176.jpg"></div>
-		<div class="card set-1 faction-shi type-weapon"><img loading="lazy" src="img/1/WARS-EN01177.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01178.jpg"></div>
-		<div class="card set-1 faction-shi type-weapon"><img loading="lazy" src="img/1/WARS-EN01179.jpg"></div>
+		<div class="card set-1 faction-shi type-character crown damir unit"><img loading="lazy" src="img/1/WARS-EN01175.jpg"></div>
+		<div class="card set-1 faction-shi type-ship damir fighter"><img loading="lazy" src="img/1/WARS-EN01176.jpg"></div>
+		<div class="card set-1 faction-shi type-weapon melee ranged"><img loading="lazy" src="img/1/WARS-EN01177.jpg"></div>
+		<div class="card set-1 faction-shi type-character crown damir unit"><img loading="lazy" src="img/1/WARS-EN01178.jpg"></div>
+		<div class="card set-1 faction-shi type-weapon melee ranged"><img loading="lazy" src="img/1/WARS-EN01179.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01180.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01181.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01182.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01183.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01184.jpg"></div>
+		<div class="card set-1 faction-shi type-character kizen crown damir unit"><img loading="lazy" src="img/1/WARS-EN01184.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01185.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01186.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01187.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01188.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01189.jpg"></div>
+		<div class="card set-1 faction-shi type-character kizen crown vishal unit"><img loading="lazy" src="img/1/WARS-EN01188.jpg"></div>
+		<div class="card set-1 faction-shi type-character kizen tilak warrior unit"><img loading="lazy" src="img/1/WARS-EN01189.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01190.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01191.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01192.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01193.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01194.jpg"></div>
+		<div class="card set-1 faction-shi type-character sudeva warrior unit"><img loading="lazy" src="img/1/WARS-EN01193.jpg"></div>
+		<div class="card set-1 faction-shi type-character crown tilak unit"><img loading="lazy" src="img/1/WARS-EN01194.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01195.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01196.jpg"></div>
+		<div class="card set-1 faction-shi type-character kizen crown vishal unit"><img loading="lazy" src="img/1/WARS-EN01196.jpg"></div>
 		<div class="card set-1 faction-shi type-order"><img loading="lazy" src="img/1/WARS-EN01197.jpg"></div>
-		<div class="card set-1 faction-shi type-weapon"><img loading="lazy" src="img/1/WARS-EN01198.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01199.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01200.jpg"></div>
+		<div class="card set-1 faction-shi type-weapon ranged"><img loading="lazy" src="img/1/WARS-EN01198.jpg"></div>
+		<div class="card set-1 faction-shi type-character kizen sudeva warrior unit"><img loading="lazy" src="img/1/WARS-EN01199.jpg"></div>
+		<div class="card set-1 faction-shi type-ship sudeva fighter"><img loading="lazy" src="img/1/WARS-EN01200.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01201.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01202.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01203.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01204.jpg"></div>
+		<div class="card set-1 faction-shi type-character damir warrior unit"><img loading="lazy" src="img/1/WARS-EN01202.jpg"></div>
+		<div class="card set-1 faction-shi type-ship damir fighter"><img loading="lazy" src="img/1/WARS-EN01203.jpg"></div>
+		<div class="card set-1 faction-shi type-ship vishal fighter"><img loading="lazy" src="img/1/WARS-EN01204.jpg"></div>
 		<div class="card set-1 faction-shi type-interrupt"><img loading="lazy" src="img/1/WARS-EN01205.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01206.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01207.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01208.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01209.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01210.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01211.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01212.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01213.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01214.jpg"></div>
+		<div class="card set-1 faction-shi type-ship sudeva fighter"><img loading="lazy" src="img/1/WARS-EN01206.jpg"></div>
+		<div class="card set-1 faction-shi type-character sudeva warrior unit"><img loading="lazy" src="img/1/WARS-EN01207.jpg"></div>
+		<div class="card set-1 faction-shi type-ship sudeva fighter"><img loading="lazy" src="img/1/WARS-EN01208.jpg"></div>
+		<div class="card set-1 faction-shi type-character sudeva warrior unit"><img loading="lazy" src="img/1/WARS-EN01209.jpg"></div>
+		<div class="card set-1 faction-shi type-character kizen crown damir unit"><img loading="lazy" src="img/1/WARS-EN01210.jpg"></div>
+		<div class="card set-1 faction-shi type-character damir warrior unit"><img loading="lazy" src="img/1/WARS-EN01211.jpg"></div>
+		<div class="card set-1 faction-shi type-ship tilak fighter"><img loading="lazy" src="img/1/WARS-EN01212.jpg"></div>
+		<div class="card set-1 faction-shi type-ship capital"><img loading="lazy" src="img/1/WARS-EN01213.jpg"></div>
+		<div class="card set-1 faction-shi type-ship sudeva capital"><img loading="lazy" src="img/1/WARS-EN01214.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01215.jpg"></div>
-		<div class="card set-1 faction-shi type-ship"><img loading="lazy" src="img/1/WARS-EN01216.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01217.jpg"></div>
-		<div class="card set-1 faction-shi type-weapon"><img loading="lazy" src="img/1/WARS-EN01218.jpg"></div>
+		<div class="card set-1 faction-shi type-ship vishal fighter"><img loading="lazy" src="img/1/WARS-EN01216.jpg"></div>
+		<div class="card set-1 faction-shi type-character vishal merchant unit"><img loading="lazy" src="img/1/WARS-EN01217.jpg"></div>
+		<div class="card set-1 faction-shi type-weapon melee ranged"><img loading="lazy" src="img/1/WARS-EN01218.jpg"></div>
 		<div class="card set-1 faction-shi type-asset"><img loading="lazy" src="img/1/WARS-EN01219.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01220.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01221.jpg"></div>
+		<div class="card set-1 faction-quay type-character luhus predator unit"><img loading="lazy" src="img/1/WARS-EN01221.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01222.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01223.jpg"></div>
+		<div class="card set-1 faction-quay type-character katal inverter unit"><img loading="lazy" src="img/1/WARS-EN01223.jpg"></div>
 		<div class="card set-1 faction-quay type-asset"><img loading="lazy" src="img/1/WARS-EN01224.jpg"></div>
 		<div class="card set-1 faction-quay type-asset"><img loading="lazy" src="img/1/WARS-EN01225.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01226.jpg"></div>
+		<div class="card set-1 faction-quay type-ship makal capital"><img loading="lazy" src="img/1/WARS-EN01226.jpg"></div>
 		<div class="card set-1 faction-quay type-asset"><img loading="lazy" src="img/1/WARS-EN01227.jpg"></div>
 		<div class="card set-1 faction-quay type-asset"><img loading="lazy" src="img/1/WARS-EN01228.jpg"></div>
 		<div class="card set-1 faction-quay type-asset"><img loading="lazy" src="img/1/WARS-EN01229.jpg"></div>
 		<div class="card set-1 faction-quay type-asset"><img loading="lazy" src="img/1/WARS-EN01230.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01231.jpg"></div>
+		<div class="card set-1 faction-quay type-character luhus inverter unit"><img loading="lazy" src="img/1/WARS-EN01231.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01232.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01233.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01234.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01235.jpg"></div>
-		<div class="card set-1 faction-quay type-weapon"><img loading="lazy" src="img/1/WARS-EN01236.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01237.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01238.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01239.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01240.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01241.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01242.jpg"></div>
-		<div class="card set-1 faction-quay type-weapon"><img loading="lazy" src="img/1/WARS-EN01243.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01244.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01245.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01246.jpg"></div>
-		<div class="card set-1 faction-quay type-weapon"><img loading="lazy" src="img/1/WARS-EN01247.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01248.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01249.jpg"></div>
+		<div class="card set-1 faction-quay type-ship qurim fighter"><img loading="lazy" src="img/1/WARS-EN01235.jpg"></div>
+		<div class="card set-1 faction-quay type-weapon melee"><img loading="lazy" src="img/1/WARS-EN01236.jpg"></div>
+		<div class="card set-1 faction-quay type-character katal predator unit"><img loading="lazy" src="img/1/WARS-EN01237.jpg"></div>
+		<div class="card set-1 faction-quay type-ship katal capital"><img loading="lazy" src="img/1/WARS-EN01238.jpg"></div>
+		<div class="card set-1 faction-quay type-character tahka predator unit"><img loading="lazy" src="img/1/WARS-EN01239.jpg"></div>
+		<div class="card set-1 faction-quay type-character makal predator unit"><img loading="lazy" src="img/1/WARS-EN01240.jpg"></div>
+		<div class="card set-1 faction-quay type-character kizen makal unit"><img loading="lazy" src="img/1/WARS-EN01241.jpg"></div>
+		<div class="card set-1 faction-quay type-character luhus predator unit"><img loading="lazy" src="img/1/WARS-EN01242.jpg"></div>
+		<div class="card set-1 faction-quay type-weapon melee"><img loading="lazy" src="img/1/WARS-EN01243.jpg"></div>
+		<div class="card set-1 faction-quay type-character luhus inverter unit"><img loading="lazy" src="img/1/WARS-EN01244.jpg"></div>
+		<div class="card set-1 faction-quay type-ship luhus capital"><img loading="lazy" src="img/1/WARS-EN01245.jpg"></div>
+		<div class="card set-1 faction-quay type-character makal predator unit"><img loading="lazy" src="img/1/WARS-EN01246.jpg"></div>
+		<div class="card set-1 faction-quay type-weapon melee"><img loading="lazy" src="img/1/WARS-EN01247.jpg"></div>
+		<div class="card set-1 faction-quay type-character makal predator unit"><img loading="lazy" src="img/1/WARS-EN01248.jpg"></div>
+		<div class="card set-1 faction-quay type-ship makal capital"><img loading="lazy" src="img/1/WARS-EN01249.jpg"></div>
 		<div class="card set-1 faction-quay type-asset"><img loading="lazy" src="img/1/WARS-EN01250.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01251.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01252.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01253.jpg"></div>
-		<div class="card set-1 faction-quay type-weapon"><img loading="lazy" src="img/1/WARS-EN01254.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01255.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01256.jpg"></div>
+		<div class="card set-1 faction-quay type-character qurim predator unit"><img loading="lazy" src="img/1/WARS-EN01252.jpg"></div>
+		<div class="card set-1 faction-quay type-character qurim predator unit"><img loading="lazy" src="img/1/WARS-EN01253.jpg"></div>
+		<div class="card set-1 faction-quay type-weapon melee"><img loading="lazy" src="img/1/WARS-EN01254.jpg"></div>
+		<div class="card set-1 faction-quay type-ship qurim capital"><img loading="lazy" src="img/1/WARS-EN01255.jpg"></div>
+		<div class="card set-1 faction-quay type-character qurim predator unit"><img loading="lazy" src="img/1/WARS-EN01256.jpg"></div>
 		<div class="card set-1 faction-quay type-asset"><img loading="lazy" src="img/1/WARS-EN01257.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01258.jpg"></div>
 		<div class="card set-1 faction-quay type-asset"><img loading="lazy" src="img/1/WARS-EN01259.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01260.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01261.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01262.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01263.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01264.jpg"></div>
+		<div class="card set-1 faction-quay type-ship tahka infiltrator fighter"><img loading="lazy" src="img/1/WARS-EN01262.jpg"></div>
+		<div class="card set-1 faction-quay type-character kizen tahka unit"><img loading="lazy" src="img/1/WARS-EN01263.jpg"></div>
+		<div class="card set-1 faction-quay type-ship qurim fighter"><img loading="lazy" src="img/1/WARS-EN01264.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01265.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01266.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01267.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01268.jpg"></div>
-		<div class="card set-1 faction-quay type-ship"><img loading="lazy" src="img/1/WARS-EN01269.jpg"></div>
+		<div class="card set-1 faction-quay type-character tahka predator unit"><img loading="lazy" src="img/1/WARS-EN01266.jpg"></div>
+		<div class="card set-1 faction-quay type-character tahka predator unit"><img loading="lazy" src="img/1/WARS-EN01267.jpg"></div>
+		<div class="card set-1 faction-quay type-ship tahka capital"><img loading="lazy" src="img/1/WARS-EN01268.jpg"></div>
+		<div class="card set-1 faction-quay type-ship tahka infiltrator fighter"><img loading="lazy" src="img/1/WARS-EN01269.jpg"></div>
 		<div class="card set-1 faction-quay type-order"><img loading="lazy" src="img/1/WARS-EN01270.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01271.jpg"></div>
+		<div class="card set-1 faction-quay type-character katal inverter unit"><img loading="lazy" src="img/1/WARS-EN01271.jpg"></div>
 		<div class="card set-1 faction-quay type-order"><img loading="lazy" src="img/1/WARS-EN01272.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01273.jpg"></div>
+		<div class="card set-1 faction-quay type-character katal inverter unit"><img loading="lazy" src="img/1/WARS-EN01273.jpg"></div>
 		<div class="card set-1 faction-quay type-interrupt"><img loading="lazy" src="img/1/WARS-EN01274.jpg"></div>
 		<div class="card set-1 faction-independent type-asset"><img loading="lazy" src="img/1/WARS-EN01275.jpg"></div>
 		<div class="card set-1 faction-independent type-asset"><img loading="lazy" src="img/1/WARS-EN01276.jpg"></div>
-		<div class="card set-1 faction-independent type-ship"><img loading="lazy" src="img/1/WARS-EN01277.jpg"></div>
-		<div class="card set-1 faction-independent type-character"><img loading="lazy" src="img/1/WARS-EN01278.jpg"></div>
-		<div class="card set-1 faction-independent type-character"><img loading="lazy" src="img/1/WARS-EN01279.jpg"></div>
+		<div class="card set-1 faction-independent type-ship capital"><img loading="lazy" src="img/1/WARS-EN01277.jpg"></div>
+		<div class="card set-1 faction-independent type-character bot unit"><img loading="lazy" src="img/1/WARS-EN01278.jpg"></div>
+		<div class="card set-1 faction-independent type-character bot unit"><img loading="lazy" src="img/1/WARS-EN01279.jpg"></div>
 		<div class="card set-1 faction-independent type-interrupt"><img loading="lazy" src="img/1/WARS-EN01280.jpg"></div>
-		<div class="card set-1 faction-independent type-character"><img loading="lazy" src="img/1/WARS-EN01281.jpg"></div>
-		<div class="card set-1 faction-independent type-ship"><img loading="lazy" src="img/1/WARS-EN01282.jpg"></div>
-		<div class="card set-1 faction-independent type-character"><img loading="lazy" src="img/1/WARS-EN01283.jpg"></div>
-		<div class="card set-1 faction-independent type-ship"><img loading="lazy" src="img/1/WARS-EN01284.jpg"></div>
+		<div class="card set-1 faction-independent type-character bot unit"><img loading="lazy" src="img/1/WARS-EN01281.jpg"></div>
+		<div class="card set-1 faction-independent type-ship capital"><img loading="lazy" src="img/1/WARS-EN01282.jpg"></div>
+		<div class="card set-1 faction-independent type-character bot unit"><img loading="lazy" src="img/1/WARS-EN01283.jpg"></div>
+		<div class="card set-1 faction-independent type-ship capital"><img loading="lazy" src="img/1/WARS-EN01284.jpg"></div>
 		<div class="card set-1 faction-independent type-interrupt"><img loading="lazy" src="img/1/WARS-EN01285.jpg"></div>
-		<div class="card set-1 faction-independent type-ship"><img loading="lazy" src="img/1/WARS-EN01286.jpg"></div>
-		<div class="card set-1 faction-independent type-character"><img loading="lazy" src="img/1/WARS-EN01287.jpg"></div>
+		<div class="card set-1 faction-independent type-ship capital"><img loading="lazy" src="img/1/WARS-EN01286.jpg"></div>
+		<div class="card set-1 faction-independent type-character bot unit"><img loading="lazy" src="img/1/WARS-EN01287.jpg"></div>
 		<div class="card set-1 faction-independent type-interrupt"><img loading="lazy" src="img/1/WARS-EN01288.jpg"></div>
-		<div class="card set-1 faction-independent type-ship"><img loading="lazy" src="img/1/WARS-EN01289.jpg"></div>
-		<div class="card set-1 faction-independent type-character"><img loading="lazy" src="img/1/WARS-EN01290.jpg"></div>
+		<div class="card set-1 faction-independent type-ship capital"><img loading="lazy" src="img/1/WARS-EN01289.jpg"></div>
+		<div class="card set-1 faction-independent type-character bot unit"><img loading="lazy" src="img/1/WARS-EN01290.jpg"></div>
 		<div class="card set-1 faction-independent type-asset"><img loading="lazy" src="img/1/WARS-EN01291.jpg"></div>
-		<div class="card set-1 faction-independent type-ship"><img loading="lazy" src="img/1/WARS-EN01292.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01293.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01294.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01295.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01296.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01297.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01298.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01299.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01300.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01301.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01302.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01303.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01304.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01305.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01306.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01307.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01308.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01309.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01310.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01311.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01312.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01313.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01314.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01315.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01316.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01317.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01318.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01319.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01320.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01321.jpg"></div>
-		<div class="lcard set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01322.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01323.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01324.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01325.jpg"></div>
-		<div class="card set-1 faction-na type-location"><img loading="lazy" src="img/1/WARS-EN01326.jpg"></div>
-		<div class="card set-1 faction-earther type-character"><img loading="lazy" src="img/1/WARS-EN01P01.jpg"></div>
-		<div class="card set-1 faction-maverick type-character"><img loading="lazy" src="img/1/WARS-EN01P02.jpg"></div>
-		<div class="card set-1 faction-quay type-character"><img loading="lazy" src="img/1/WARS-EN01P03.jpg"></div>
-		<div class="card set-1 faction-shi type-character"><img loading="lazy" src="img/1/WARS-EN01P04.jpg"></div>
+		<div class="card set-1 faction-independent type-ship fighter"><img loading="lazy" src="img/1/WARS-EN01292.jpg"></div>
+		<div class="card set-1 faction-na type-location sector station"><img loading="lazy" src="img/1/WARS-EN01293.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01294.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site port"><img loading="lazy" src="img/1/WARS-EN01295.jpg"></div>
+		<div class="card set-1 faction-na type-location sector asteroid"><img loading="lazy" src="img/1/WARS-EN01296.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01297.jpg"></div>
+		<div class="card set-1 faction-na type-location sector planet"><img loading="lazy" src="img/1/WARS-EN01298.jpg"></div>
+		<div class="card set-1 faction-na type-location sector moon"><img loading="lazy" src="img/1/WARS-EN01299.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01300.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01301.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01302.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01303.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01304.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01305.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01306.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site underground"><img loading="lazy" src="img/1/WARS-EN01307.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01308.jpg"></div>
+		<div class="card set-1 faction-na type-location sector moon"><img loading="lazy" src="img/1/WARS-EN01309.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01310.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site underground"><img loading="lazy" src="img/1/WARS-EN01311.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01312.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01313.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01314.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site"><img loading="lazy" src="img/1/WARS-EN01315.jpg"></div>
+		<div class="card set-1 faction-na type-location sector planet"><img loading="lazy" src="img/1/WARS-EN01316.jpg"></div>
+		<div class="card set-1 faction-na type-location sector moon"><img loading="lazy" src="img/1/WARS-EN01317.jpg"></div>
+		<div class="card set-1 faction-na type-location sector planet"><img loading="lazy" src="img/1/WARS-EN01318.jpg"></div>
+		<div class="card set-1 faction-na type-location sector asteroid"><img loading="lazy" src="img/1/WARS-EN01319.jpg"></div>
+		<div class="card set-1 faction-na type-location sector planet"><img loading="lazy" src="img/1/WARS-EN01320.jpg"></div>
+		<div class="card set-1 faction-na type-location sector planet"><img loading="lazy" src="img/1/WARS-EN01321.jpg"></div>
+		<div class="lcard set-1 faction-na type-location site port"><img loading="lazy" src="img/1/WARS-EN01322.jpg"></div>
+		<div class="card set-1 faction-na type-location sector asteroid"><img loading="lazy" src="img/1/WARS-EN01323.jpg"></div>
+		<div class="card set-1 faction-na type-location sector moon"><img loading="lazy" src="img/1/WARS-EN01324.jpg"></div>
+		<div class="card set-1 faction-na type-location sector planet"><img loading="lazy" src="img/1/WARS-EN01325.jpg"></div>
+		<div class="card set-1 faction-na type-location sector asteroid"><img loading="lazy" src="img/1/WARS-EN01326.jpg"></div>
+		<div class="card set-1 faction-earther type-character kizen cisyn unit"><img loading="lazy" src="img/1/WARS-EN01P01.jpg"></div>
+		<div class="card set-1 faction-gongen type-character kizen shikami unit"><img loading="lazy" src="img/1/WARS-EN01P02.jpg"></div>
+		<div class="card set-1 faction-quay type-character kizen qurim unit"><img loading="lazy" src="img/1/WARS-EN01P03.jpg"></div>
+		<div class="card set-1 faction-shi type-character kizen crown anant unit"><img loading="lazy" src="img/1/WARS-EN01P04.jpg"></div>
 
 	<!-- SET 2: NOWHERE -->
 		<div class="card set-2 faction-earther type-interrupt"><img loading="lazy" src="img/2/WARS-EN02001.jpg"></div>
-		<div class="card set-2 faction-earther type-character"><img loading="lazy" src="img/2/WARS-EN02002.jpg"></div>
-		<div class="card set-2 faction-earther type-character"><img loading="lazy" src="img/2/WARS-EN02003.jpg"></div>
-		<div class="card set-2 faction-earther type-vehicle"><img loading="lazy" src="img/2/WARS-EN02004.jpg"></div>
+		<div class="card set-2 faction-earther type-character kizen cisyn unit"><img loading="lazy" src="img/2/WARS-EN02002.jpg"></div>
+		<div class="card set-2 faction-earther type-character kizen cisyn unit"><img loading="lazy" src="img/2/WARS-EN02003.jpg"></div>
+		<div class="card set-2 faction-earther type-vehicle fedgrav inverter unit"><img loading="lazy" src="img/2/WARS-EN02004.jpg"></div>
 		<div class="card set-2 faction-earther type-interrupt"><img loading="lazy" src="img/2/WARS-EN02005.jpg"></div>
-		<div class="card set-2 faction-earther type-weapon"><img loading="lazy" src="img/2/WARS-EN02006.jpg"></div>
+		<div class="card set-2 faction-earther type-weapon ranged"><img loading="lazy" src="img/2/WARS-EN02006.jpg"></div>
 		<div class="card set-2 faction-earther type-interrupt"><img loading="lazy" src="img/2/WARS-EN02007.jpg"></div>
 		<div class="card set-2 faction-earther type-interrupt"><img loading="lazy" src="img/2/WARS-EN02008.jpg"></div>
-		<div class="card set-2 faction-earther type-ship"><img loading="lazy" src="img/2/WARS-EN02009.jpg"></div>
+		<div class="card set-2 faction-earther type-ship icom fighter"><img loading="lazy" src="img/2/WARS-EN02009.jpg"></div>
 		<div class="card set-2 faction-earther type-asset"><img loading="lazy" src="img/2/WARS-EN02010.jpg"></div>
-		<div class="card set-2 faction-earther type-character"><img loading="lazy" src="img/2/WARS-EN02011.jpg"></div>
+		<div class="card set-2 faction-earther type-character cisyn infiltrator unit"><img loading="lazy" src="img/2/WARS-EN02011.jpg"></div>
 		<div class="card set-2 faction-earther type-asset"><img loading="lazy" src="img/2/WARS-EN02012.jpg"></div>
-		<div class="card set-2 faction-earther type-character"><img loading="lazy" src="img/2/WARS-EN02013.jpg"></div>
+		<div class="card set-2 faction-earther type-character xelabs merchant unit"><img loading="lazy" src="img/2/WARS-EN02013.jpg"></div>
 		<div class="card set-2 faction-earther type-interrupt"><img loading="lazy" src="img/2/WARS-EN02014.jpg"></div>
 		<div class="card set-2 faction-earther type-interrupt"><img loading="lazy" src="img/2/WARS-EN02015.jpg"></div>
 		<div class="card set-2 faction-earther type-interrupt"><img loading="lazy" src="img/2/WARS-EN02016.jpg"></div>
-		<div class="card set-2 faction-earther type-ship"><img loading="lazy" src="img/2/WARS-EN02017.jpg"></div>
-		<div class="card set-2 faction-earther type-character"><img loading="lazy" src="img/2/WARS-EN02018.jpg"></div>
-		<div class="card set-2 faction-earther type-character"><img loading="lazy" src="img/2/WARS-EN02019.jpg"></div>
-		<div class="card set-2 faction-earther type-character"><img loading="lazy" src="img/2/WARS-EN02020.jpg"></div>
-		<div class="card set-2 faction-earther type-character"><img loading="lazy" src="img/2/WARS-EN02021.jpg"></div>
-		<div class="card set-2 faction-earther type-ship"><img loading="lazy" src="img/2/WARS-EN02022.jpg"></div>
-		<div class="card set-2 faction-earther type-character"><img loading="lazy" src="img/2/WARS-EN02023.jpg"></div>
+		<div class="card set-2 faction-earther type-ship icom capital"><img loading="lazy" src="img/2/WARS-EN02017.jpg"></div>
+		<div class="card set-2 faction-earther type-character xelabs warrior unit"><img loading="lazy" src="img/2/WARS-EN02018.jpg"></div>
+		<div class="card set-2 faction-earther type-character kizen cisyn unit"><img loading="lazy" src="img/2/WARS-EN02019.jpg"></div>
+		<div class="card set-2 faction-earther type-character xelabs warrior unit"><img loading="lazy" src="img/2/WARS-EN02020.jpg"></div>
+		<div class="card set-2 faction-earther type-character xelabs warrior inverter unit"><img loading="lazy" src="img/2/WARS-EN02021.jpg"></div>
+		<div class="card set-2 faction-earther type-ship xelabs capital"><img loading="lazy" src="img/2/WARS-EN02022.jpg"></div>
+		<div class="card set-2 faction-earther type-character kizen cgc warrior unit"><img loading="lazy" src="img/2/WARS-EN02023.jpg"></div>
 		<div class="card set-2 faction-earther type-asset"><img loading="lazy" src="img/2/WARS-EN02024.jpg"></div>
-		<div class="card set-2 faction-earther type-asset"><img loading="lazy" src="img/2/WARS-EN02025.jpg"></div>
+		<div class="card set-2 faction-earther type-asset stockpile"><img loading="lazy" src="img/2/WARS-EN02025.jpg"></div>
 		<div class="card set-2 faction-earther type-order"><img loading="lazy" src="img/2/WARS-EN02026.jpg"></div>
-		<div class="card set-2 faction-earther type-ship"><img loading="lazy" src="img/2/WARS-EN02027.jpg"></div>
-		<div class="card set-2 faction-earther type-ship"><img loading="lazy" src="img/2/WARS-EN02028.jpg"></div>
+		<div class="card set-2 faction-earther type-ship xelabs fighter"><img loading="lazy" src="img/2/WARS-EN02027.jpg"></div>
+		<div class="card set-2 faction-earther type-shipxelabs fighter"><img loading="lazy" src="img/2/WARS-EN02028.jpg"></div>
 		<div class="card set-2 faction-earther type-interrupt"><img loading="lazy" src="img/2/WARS-EN02029.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02030.jpg"></div>
-		<div class="card set-2 faction-gongen type-vehicle"><img loading="lazy" src="img/2/WARS-EN02031.jpg"></div>
+		<div class="card set-2 faction-gongen type-character ikazuchi tech warrior unit"><img loading="lazy" src="img/2/WARS-EN02030.jpg"></div>
+		<div class="card set-2 faction-gongen type-vehicle ikazuchi unit"><img loading="lazy" src="img/2/WARS-EN02031.jpg"></div>
 		<div class="card set-2 faction-gongen type-asset"><img loading="lazy" src="img/2/WARS-EN02032.jpg"></div>
 		<div class="card set-2 faction-gongen type-interrupt"><img loading="lazy" src="img/2/WARS-EN02033.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02034.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02035.jpg"></div>
-		<div class="card set-2 faction-gongen type-weapon"><img loading="lazy" src="img/2/WARS-EN02036.jpg"></div>
-		<div class="card set-2 faction-gongen type-nobot"><img loading="lazy" src="img/2/WARS-EN02037.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02038.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02039.jpg"></div>
+		<div class="card set-2 faction-gongen type-character deigan tech unit"><img loading="lazy" src="img/2/WARS-EN02034.jpg"></div>
+		<div class="card set-2 faction-gongen type-character deigan warrior unit"><img loading="lazy" src="img/2/WARS-EN02035.jpg"></div>
+		<div class="card set-2 faction-gongen type-weapon ranged"><img loading="lazy" src="img/2/WARS-EN02036.jpg"></div>
+		<div class="card set-2 faction-gongen type-nobot deigan inverter bot unit"><img loading="lazy" src="img/2/WARS-EN02037.jpg"></div>
+		<div class="card set-2 faction-gongen type-character ikazuchi warrior unit"><img loading="lazy" src="img/2/WARS-EN02038.jpg"></div>
+		<div class="card set-2 faction-gongen type-character ikazuchi tech unit"><img loading="lazy" src="img/2/WARS-EN02039.jpg"></div>
 		<div class="card set-2 faction-gongen type-asset"><img loading="lazy" src="img/2/WARS-EN02040.jpg"></div>
-		<div class="card set-2 faction-gongen type-ship"><img loading="lazy" src="img/2/WARS-EN02041.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02042.jpg"></div>
-		<div class="card set-2 faction-gongen type-ship"><img loading="lazy" src="img/2/WARS-EN02043.jpg"></div>
+		<div class="card set-2 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/2/WARS-EN02041.jpg"></div>
+		<div class="card set-2 faction-gongen type-character deigan warrior unit"><img loading="lazy" src="img/2/WARS-EN02042.jpg"></div>
+		<div class="card set-2 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/2/WARS-EN02043.jpg"></div>
 		<div class="card set-2 faction-gongen type-interrupt"><img loading="lazy" src="img/2/WARS-EN02044.jpg"></div>
 		<div class="card set-2 faction-gongen type-asset"><img loading="lazy" src="img/2/WARS-EN02045.jpg"></div>
 		<div class="card set-2 faction-gongen type-asset"><img loading="lazy" src="img/2/WARS-EN02046.jpg"></div>
 		<div class="card set-2 faction-gongen type-interrupt"><img loading="lazy" src="img/2/WARS-EN02047.jpg"></div>
-		<div class="card set-2 faction-gongen type-ship"><img loading="lazy" src="img/2/WARS-EN02048.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02049.jpg"></div>
-		<div class="card set-2 faction-gongen type-ship"><img loading="lazy" src="img/2/WARS-EN02050.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02051.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02052.jpg"></div>
-		<div class="card set-2 faction-gongen type-weapon"><img loading="lazy" src="img/2/WARS-EN02053.jpg"></div>
-		<div class="card set-2 faction-gongen type-asset"><img loading="lazy" src="img/2/WARS-EN02054.jpg"></div>
-		<div class="card set-2 faction-gongen type-character"><img loading="lazy" src="img/2/WARS-EN02055.jpg"></div>
+		<div class="card set-2 faction-gongen type-ship tenno capital"><img loading="lazy" src="img/2/WARS-EN02048.jpg"></div>
+		<div class="card set-2 faction-gongen type-character deigan warrior unit"><img loading="lazy" src="img/2/WARS-EN02049.jpg"></div>
+		<div class="card set-2 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/2/WARS-EN02050.jpg"></div>
+		<div class="card set-2 faction-gongen type-character deigan warrior unit"><img loading="lazy" src="img/2/WARS-EN02051.jpg"></div>
+		<div class="card set-2 faction-gongen type-character kizen ikazuchi unit"><img loading="lazy" src="img/2/WARS-EN02052.jpg"></div>
+		<div class="card set-2 faction-gongen type-weapon melee"><img loading="lazy" src="img/2/WARS-EN02053.jpg"></div>
+		<div class="card set-2 faction-gongen type-asset stockpile"><img loading="lazy" src="img/2/WARS-EN02054.jpg"></div>
+		<div class="card set-2 faction-gongen type-character ikazuchi tech unit"><img loading="lazy" src="img/2/WARS-EN02055.jpg"></div>
 		<div class="card set-2 faction-gongen type-order"><img loading="lazy" src="img/2/WARS-EN02056.jpg"></div>
-		<div class="card set-2 faction-gongen type-ship"><img loading="lazy" src="img/2/WARS-EN02057.jpg"></div>
-		<div class="card set-2 faction-maverick type-character"><img loading="lazy" src="img/2/WARS-EN02058.jpg"></div>
-		<div class="card set-2 faction-maverick type-character"><img loading="lazy" src="img/2/WARS-EN02059.jpg"></div>
+		<div class="card set-2 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/2/WARS-EN02057.jpg"></div>
+		<div class="card set-2 faction-maverick type-character accord rogue unit"><img loading="lazy" src="img/2/WARS-EN02058.jpg"></div>
+		<div class="card set-2 faction-maverick type-character hellcats tech unit"><img loading="lazy" src="img/2/WARS-EN02059.jpg"></div>
 		<div class="card set-2 faction-maverick type-interrupt"><img loading="lazy" src="img/2/WARS-EN02060.jpg"></div>
-		<div class="card set-2 faction-maverick type-ship"><img loading="lazy" src="img/2/WARS-EN02061.jpg"></div>
-		<div class="card set-2 faction-maverick type-character"><img loading="lazy" src="img/2/WARS-EN02062.jpg"></div>
-		<div class="card set-2 faction-maverick type-ship"><img loading="lazy" src="img/2/WARS-EN02063.jpg"></div>
+		<div class="card set-2 faction-maverick type-ship cartel fighter"><img loading="lazy" src="img/2/WARS-EN02061.jpg"></div>
+		<div class="card set-2 faction-maverick type-character hellcats tech unit"><img loading="lazy" src="img/2/WARS-EN02062.jpg"></div>
+		<div class="card set-2 faction-maverick type-ship hellcats inverter fighter"><img loading="lazy" src="img/2/WARS-EN02063.jpg"></div>
 		<div class="card set-2 faction-maverick type-asset"><img loading="lazy" src="img/2/WARS-EN02064.jpg"></div>
-		<div class="card set-2 faction-maverick type-character"><img loading="lazy" src="img/2/WARS-EN02065.jpg"></div>
-		<div class="card set-2 faction-maverick type-ship"><img loading="lazy" src="img/2/WARS-EN02066.jpg"></div>
-		<div class="card set-2 faction-maverick type-ship"><img loading="lazy" src="img/2/WARS-EN02067.jpg"></div>
+		<div class="card set-2 faction-maverick type-character cartel bot unit"><img loading="lazy" src="img/2/WARS-EN02065.jpg"></div>
+		<div class="card set-2 faction-maverick type-ship cartel inverter fighter"><img loading="lazy" src="img/2/WARS-EN02066.jpg"></div>
+		<div class="card set-2 faction-maverick type-ship hellcats inverter fighter"><img loading="lazy" src="img/2/WARS-EN02067.jpg"></div>
 		<div class="card set-2 faction-maverick type-asset"><img loading="lazy" src="img/2/WARS-EN02068.jpg"></div>
-		<div class="card set-2 faction-maverick type-asset"><img loading="lazy" src="img/2/WARS-EN02069.jpg"></div>
+		<div class="card set-2 faction-maverick type-asset evidence"><img loading="lazy" src="img/2/WARS-EN02069.jpg"></div>
 		<div class="card set-2 faction-maverick type-interrupt"><img loading="lazy" src="img/2/WARS-EN02070.jpg"></div>
-		<div class="card set-2 faction-maverick type-character"><img loading="lazy" src="img/2/WARS-EN02071.jpg"></div>
-		<div class="card set-2 faction-maverick type-character"><img loading="lazy" src="img/2/WARS-EN02072.jpg"></div>
-		<div class="card set-2 faction-maverick type-asset"><img loading="lazy" src="img/2/WARS-EN02073.jpg"></div>
-		<div class="card set-2 faction-maverick type-character"><img loading="lazy" src="img/2/WARS-EN02074.jpg"></div>
+		<div class="card set-2 faction-maverick type-character cartel warrior unit"><img loading="lazy" src="img/2/WARS-EN02071.jpg"></div>
+		<div class="card set-2 faction-maverick type-character cartel rogue unit"><img loading="lazy" src="img/2/WARS-EN02072.jpg"></div>
+		<div class="card set-2 faction-maverick type-asset evidence"><img loading="lazy" src="img/2/WARS-EN02073.jpg"></div>
+		<div class="card set-2 faction-maverick type-character kizen cartel unit"><img loading="lazy" src="img/2/WARS-EN02074.jpg"></div>
 		<div class="card set-2 faction-maverick type-asset"><img loading="lazy" src="img/2/WARS-EN02075.jpg"></div>
-		<div class="card set-2 faction-maverick type-vehicle"><img loading="lazy" src="img/2/WARS-EN02076.jpg"></div>
+		<div class="card set-2 faction-maverick type-vehicle cogs unit"><img loading="lazy" src="img/2/WARS-EN02076.jpg"></div>
 		<div class="card set-2 faction-maverick type-interrupt"><img loading="lazy" src="img/2/WARS-EN02077.jpg"></div>
 		<div class="card set-2 faction-maverick type-interrupt"><img loading="lazy" src="img/2/WARS-EN02078.jpg"></div>
-		<div class="card set-2 faction-maverick type-asset"><img loading="lazy" src="img/2/WARS-EN02079.jpg"></div>
-		<div class="card set-2 faction-maverick type-ship"><img loading="lazy" src="img/2/WARS-EN02080.jpg"></div>
+		<div class="card set-2 faction-maverick type-asset evidence"><img loading="lazy" src="img/2/WARS-EN02079.jpg"></div>
+		<div class="card set-2 faction-maverick type-ship cartel inverter fighter"><img loading="lazy" src="img/2/WARS-EN02080.jpg"></div>
 		<div class="card set-2 faction-maverick type-interrupt"><img loading="lazy" src="img/2/WARS-EN02081.jpg"></div>
 		<div class="card set-2 faction-maverick type-order"><img loading="lazy" src="img/2/WARS-EN02082.jpg"></div>
-		<div class="card set-2 faction-maverick type-asset"><img loading="lazy" src="img/2/WARS-EN02083.jpg"></div>
-		<div class="card set-2 faction-maverick type-weapon"><img loading="lazy" src="img/2/WARS-EN02084.jpg"></div>
-		<div class="card set-2 faction-maverick type-ship"><img loading="lazy" src="img/2/WARS-EN02085.jpg"></div>
-		<div class="card set-2 faction-maverick type-vehicle"><img loading="lazy" src="img/2/WARS-EN02086.jpg"></div>
+		<div class="card set-2 faction-maverick type-asset stockpile"><img loading="lazy" src="img/2/WARS-EN02083.jpg"></div>
+		<div class="card set-2 faction-maverick type-weapon ranged"><img loading="lazy" src="img/2/WARS-EN02084.jpg"></div>
+		<div class="card set-2 faction-maverick type-ship hellcats inverter fighter"><img loading="lazy" src="img/2/WARS-EN02085.jpg"></div>
+		<div class="card set-2 faction-maverick type-vehicle cartel unit"><img loading="lazy" src="img/2/WARS-EN02086.jpg"></div>
 		<div class="card set-2 faction-shi type-asset"><img loading="lazy" src="img/2/WARS-EN02087.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02088.jpg"></div>
-		<div class="card set-2 faction-shi type-weapon"><img loading="lazy" src="img/2/WARS-EN02089.jpg"></div>
+		<div class="card set-2 faction-shi type-character kizen crown anant unit"><img loading="lazy" src="img/2/WARS-EN02088.jpg"></div>
+		<div class="card set-2 faction-shi type-weapon ranged"><img loading="lazy" src="img/2/WARS-EN02089.jpg"></div>
 		<div class="card set-2 faction-shi type-interrupt"><img loading="lazy" src="img/2/WARS-EN02090.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02091.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02092.jpg"></div>
+		<div class="card set-2 faction-shi type-character anant warrior unit"><img loading="lazy" src="img/2/WARS-EN02091.jpg"></div>
+		<div class="card set-2 faction-shi type-character anant warrior unit"><img loading="lazy" src="img/2/WARS-EN02092.jpg"></div>
 		<div class="card set-2 faction-shi type-interrupt"><img loading="lazy" src="img/2/WARS-EN02093.jpg"></div>
 		<div class="card set-2 faction-shi type-asset"><img loading="lazy" src="img/2/WARS-EN02094.jpg"></div>
-		<div class="card set-2 faction-shi type-ship"><img loading="lazy" src="img/2/WARS-EN02095.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02096.jpg"></div>
+		<div class="card set-2 faction-shi type-ship sudeva capital"><img loading="lazy" src="img/2/WARS-EN02095.jpg"></div>
+		<div class="card set-2 faction-shi type-character kizen crown tilak unit"><img loading="lazy" src="img/2/WARS-EN02096.jpg"></div>
 		<div class="card set-2 faction-shi type-interrupt"><img loading="lazy" src="img/2/WARS-EN02097.jpg"></div>
 		<div class="card set-2 faction-shi type-interrupt"><img loading="lazy" src="img/2/WARS-EN02098.jpg"></div>
-		<div class="card set-2 faction-shi type-ship"><img loading="lazy" src="img/2/WARS-EN02099.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02100.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02101.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02102.jpg"></div>
+		<div class="card set-2 faction-shi type-ship anant fighter"><img loading="lazy" src="img/2/WARS-EN02099.jpg"></div>
+		<div class="card set-2 faction-shi type-character anant warrior unit"><img loading="lazy" src="img/2/WARS-EN02100.jpg"></div>
+		<div class="card set-2 faction-shi type-character tilak tech unit"><img loading="lazy" src="img/2/WARS-EN02101.jpg"></div>
+		<div class="card set-2 faction-shi type-character anant tech unit"><img loading="lazy" src="img/2/WARS-EN02102.jpg"></div>
 		<div class="card set-2 faction-shi type-interrupt"><img loading="lazy" src="img/2/WARS-EN02103.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02104.jpg"></div>
-		<div class="card set-2 faction-shi type-ship"><img loading="lazy" src="img/2/WARS-EN02105.jpg"></div>
-		<div class="card set-2 faction-shi type-ship"><img loading="lazy" src="img/2/WARS-EN02106.jpg"></div>
+		<div class="card set-2 faction-shi type-character crown anant unit"><img loading="lazy" src="img/2/WARS-EN02104.jpg"></div>
+		<div class="card set-2 faction-shi type-ship tilak inverter capital"><img loading="lazy" src="img/2/WARS-EN02105.jpg"></div>
+		<div class="card set-2 faction-shi type-ship tilak fighter"><img loading="lazy" src="img/2/WARS-EN02106.jpg"></div>
 		<div class="card set-2 faction-shi type-asset"><img loading="lazy" src="img/2/WARS-EN02107.jpg"></div>
-		<div class="card set-2 faction-shi type-ship"><img loading="lazy" src="img/2/WARS-EN02108.jpg"></div>
+		<div class="card set-2 faction-shi type-ship anant fighter"><img loading="lazy" src="img/2/WARS-EN02108.jpg"></div>
 		<div class="card set-2 faction-shi type-asset"><img loading="lazy" src="img/2/WARS-EN02109.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02110.jpg"></div>
-		<div class="card set-2 faction-shi type-ship"><img loading="lazy" src="img/2/WARS-EN02111.jpg"></div>
-		<div class="card set-2 faction-shi type-asset"><img loading="lazy" src="img/2/WARS-EN02112.jpg"></div>
+		<div class="card set-2 faction-shi type-character kizen crown tilak unit"><img loading="lazy" src="img/2/WARS-EN02110.jpg"></div>
+		<div class="card set-2 faction-shi type-ship tilak inverter capital"><img loading="lazy" src="img/2/WARS-EN02111.jpg"></div>
+		<div class="card set-2 faction-shi type-asset stockpile"><img loading="lazy" src="img/2/WARS-EN02112.jpg"></div>
 		<div class="card set-2 faction-shi type-interrupt"><img loading="lazy" src="img/2/WARS-EN02113.jpg"></div>
-		<div class="card set-2 faction-shi type-character"><img loading="lazy" src="img/2/WARS-EN02114.jpg"></div>
-		<div class="card set-2 faction-quay type-ship"><img loading="lazy" src="img/2/WARS-EN02115.jpg"></div>
+		<div class="card set-2 faction-shi type-character tilak tech unit"><img loading="lazy" src="img/2/WARS-EN02114.jpg"></div>
+		<div class="card set-2 faction-quay type-ship qurim fighter"><img loading="lazy" src="img/2/WARS-EN02115.jpg"></div>
 		<div class="card set-2 faction-quay type-interrupt"><img loading="lazy" src="img/2/WARS-EN02116.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02117.jpg"></div>
+		<div class="card set-2 faction-quay type-character kizen qurim unit"><img loading="lazy" src="img/2/WARS-EN02117.jpg"></div>
 		<div class="card set-2 faction-quay type-interrupt"><img loading="lazy" src="img/2/WARS-EN02118.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02119.jpg"></div>
-		<div class="card set-2 faction-quay type-ship"><img loading="lazy" src="img/2/WARS-EN02120.jpg"></div>
-		<div class="card set-2 faction-quay type-ship"><img loading="lazy" src="img/2/WARS-EN02121.jpg"></div>
+		<div class="card set-2 faction-quay type-character tahka predator unit"><img loading="lazy" src="img/2/WARS-EN02119.jpg"></div>
+		<div class="card set-2 faction-quay type-ship qurim fighter"><img loading="lazy" src="img/2/WARS-EN02120.jpg"></div>
+		<div class="card set-2 faction-quay type-ship luhus fighter"><img loading="lazy" src="img/2/WARS-EN02121.jpg"></div>
 		<div class="card set-2 faction-quay type-asset"><img loading="lazy" src="img/2/WARS-EN02122.jpg"></div>
 		<div class="card set-2 faction-quay type-interrupt"><img loading="lazy" src="img/2/WARS-EN02123.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02124.jpg"></div>
+		<div class="card set-2 faction-quay type-character tahka inverter unit"><img loading="lazy" src="img/2/WARS-EN02124.jpg"></div>
 		<div class="card set-2 faction-quay type-interrupt"><img loading="lazy" src="img/2/WARS-EN02125.jpg"></div>
-		<div class="card set-2 faction-quay type-weapon"><img loading="lazy" src="img/2/WARS-EN02126.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02127.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02128.jpg"></div>
+		<div class="card set-2 faction-quay type-weapon ranged"><img loading="lazy" src="img/2/WARS-EN02126.jpg"></div>
+		<div class="card set-2 faction-quay type-character tahka inverter unit"><img loading="lazy" src="img/2/WARS-EN02127.jpg"></div>
+		<div class="card set-2 faction-quay type-character qurim tech unit"><img loading="lazy" src="img/2/WARS-EN02128.jpg"></div>
 		<div class="card set-2 faction-quay type-order"><img loading="lazy" src="img/2/WARS-EN02129.jpg"></div>
-		<div class="card set-2 faction-quay type-ship"><img loading="lazy" src="img/2/WARS-EN02130.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02131.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02132.jpg"></div>
+		<div class="card set-2 faction-quay type-ship tahka capital"><img loading="lazy" src="img/2/WARS-EN02130.jpg"></div>
+		<div class="card set-2 faction-quay type-character tahka predator unit"><img loading="lazy" src="img/2/WARS-EN02131.jpg"></div>
+		<div class="card set-2 faction-quay type-character tahka inverter unit"><img loading="lazy" src="img/2/WARS-EN02132.jpg"></div>
 		<div class="card set-2 faction-quay type-interrupt"><img loading="lazy" src="img/2/WARS-EN02133.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02134.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02135.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02136.jpg"></div>
+		<div class="card set-2 faction-quay type-character luhus inverter unit"><img loading="lazy" src="img/2/WARS-EN02134.jpg"></div>
+		<div class="card set-2 faction-quay type-character qurim tech unit"><img loading="lazy" src="img/2/WARS-EN02135.jpg"></div>
+		<div class="card set-2 faction-quay type-character tahka predator unit"><img loading="lazy" src="img/2/WARS-EN02136.jpg"></div>
 		<div class="card set-2 faction-quay type-interrupt"><img loading="lazy" src="img/2/WARS-EN02137.jpg"></div>
-		<div class="card set-2 faction-quay type-character"><img loading="lazy" src="img/2/WARS-EN02138.jpg"></div>
+		<div class="card set-2 faction-quay type-character luhus predator unit"><img loading="lazy" src="img/2/WARS-EN02138.jpg"></div>
 		<div class="card set-2 faction-quay type-asset"><img loading="lazy" src="img/2/WARS-EN02139.jpg"></div>
-		<div class="card set-2 faction-quay type-ship"><img loading="lazy" src="img/2/WARS-EN02140.jpg"></div>
-		<div class="card set-2 faction-quay type-asset"><img loading="lazy" src="img/2/WARS-EN02141.jpg"></div>
-		<div class="card set-2 faction-independent type-character"><img loading="lazy" src="img/2/WARS-EN02142.jpg"></div>
-		<div class="card set-2 faction-independent type-character"><img loading="lazy" src="img/2/WARS-EN02143.jpg"></div>
-		<div class="card set-2 faction-independent type-character"><img loading="lazy" src="img/2/WARS-EN02144.jpg"></div>
+		<div class="card set-2 faction-quay type-ship tahka capital"><img loading="lazy" src="img/2/WARS-EN02140.jpg"></div>
+		<div class="card set-2 faction-quay type-asset stockpile"><img loading="lazy" src="img/2/WARS-EN02141.jpg"></div>
+		<div class="card set-2 faction-independent type-character bot unit"><img loading="lazy" src="img/2/WARS-EN02142.jpg"></div>
+		<div class="card set-2 faction-independent type-character bot unit"><img loading="lazy" src="img/2/WARS-EN02143.jpg"></div>
+		<div class="card set-2 faction-independent type-character bot unit"><img loading="lazy" src="img/2/WARS-EN02144.jpg"></div>
 		<div class="card set-2 faction-independent type-asset"><img loading="lazy" src="img/2/WARS-EN02145.jpg"></div>
-		<div class="card set-2 faction-independent type-character"><img loading="lazy" src="img/2/WARS-EN02146.jpg"></div>
+		<div class="card set-2 faction-independent type-character bot unit"><img loading="lazy" src="img/2/WARS-EN02146.jpg"></div>
 		<div class="card set-2 faction-independent type-asset"><img loading="lazy" src="img/2/WARS-EN02147.jpg"></div>
 		<div class="card set-2 faction-independent type-asset"><img loading="lazy" src="img/2/WARS-EN02148.jpg"></div>
-		<div class="card set-2 faction-independent type-character"><img loading="lazy" src="img/2/WARS-EN02149.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02150.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02151.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02152.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02153.jpg"></div>
-		<div class="lcard set-2 faction- type-location (site)"><img loading="lazy" src="img/2/WARS-EN02154.jpg"></div>
-		<div class="lcard set-2 faction- type-location (site)"><img loading="lazy" src="img/2/WARS-EN02155.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02156.jpg"></div>
-		<div class="lcard set-2 faction- type-location (site)"><img loading="lazy" src="img/2/WARS-EN02157.jpg"></div>
-		<div class="lcard set-2 faction- type-location (site)"><img loading="lazy" src="img/2/WARS-EN02158.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02159.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02160.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02161.jpg"></div>
-		<div class="lcard set-2 faction- type-location (site)"><img loading="lazy" src="img/2/WARS-EN02162.jpg"></div>
-		<div class="lcard set-2 faction- type-location (site)"><img loading="lazy" src="img/2/WARS-EN02163.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02164.jpg"></div>
-		<div class="card set-2 faction- type-location (sector)"><img loading="lazy" src="img/2/WARS-EN02165.jpg"></div>
-		<div class="card set-2 faction-earther type-"><img loading="lazy" src="img/2/WARS-EN02P01.jpg"></div>
-		<div class="card set-2 faction-maverick type-"><img loading="lazy" src="img/2/WARS-EN02P02.jpg"></div>
+		<div class="card set-2 faction-independent type-character bot unit"><img loading="lazy" src="img/2/WARS-EN02149.jpg"></div>
+		<div class="card set-2 faction- type-location sector asteroid"><img loading="lazy" src="img/2/WARS-EN02150.jpg"></div>
+		<div class="card set-2 faction- type-location sector station"><img loading="lazy" src="img/2/WARS-EN02151.jpg"></div>
+		<div class="card set-2 faction- type-location sector"><img loading="lazy" src="img/2/WARS-EN02152.jpg"></div>
+		<div class="card set-2 faction- type-location sector station"><img loading="lazy" src="img/2/WARS-EN02153.jpg"></div>
+		<div class="lcard set-2 faction- type-location site"><img loading="lazy" src="img/2/WARS-EN02154.jpg"></div>
+		<div class="lcard set-2 faction- type-location site"><img loading="lazy" src="img/2/WARS-EN02155.jpg"></div>
+		<div class="card set-2 faction- type-location sector moon"><img loading="lazy" src="img/2/WARS-EN02156.jpg"></div>
+		<div class="lcard set-2 faction- type-location site underground"><img loading="lazy" src="img/2/WARS-EN02157.jpg"></div>
+		<div class="lcard set-2 faction- type-location site port"><img loading="lazy" src="img/2/WARS-EN02158.jpg"></div>
+		<div class="card set-2 faction- type-location sector planet"><img loading="lazy" src="img/2/WARS-EN02159.jpg"></div>
+		<div class="card set-2 faction- type-location sector station"><img loading="lazy" src="img/2/WARS-EN02160.jpg"></div>
+		<div class="card set-2 faction- type-location sector moon"><img loading="lazy" src="img/2/WARS-EN02161.jpg"></div>
+		<div class="lcard set-2 faction- type-location site"><img loading="lazy" src="img/2/WARS-EN02162.jpg"></div>
+		<div class="lcard set-2 faction- type-location site"><img loading="lazy" src="img/2/WARS-EN02163.jpg"></div>
+		<div class="card set-2 faction- type-location sector station"><img loading="lazy" src="img/2/WARS-EN02164.jpg"></div>
+		<div class="card set-2 faction- type-location sector station"><img loading="lazy" src="img/2/WARS-EN02165.jpg"></div>
+		<div class="card set-2 faction-earther type-vehicle fedgrav inverter unit"><img loading="lazy" src="img/2/WARS-EN02P01.jpg"></div>
+		<div class="card set-2 faction-maverick type-character hellcats tech unit"><img loading="lazy" src="img/2/WARS-EN02P02.jpg"></div>
 
 	<!-- SET 3: EDGE -->
 		<div class="card set-3 faction-earther type-order"><img loading="lazy" src="img/3/WARS-EN03001.jpg"></div>
 		<div class="card set-3 faction-earther type-asset"><img loading="lazy" src="img/3/WARS-EN03002.jpg"></div>
-		<div class="card set-3 faction-earther type-asset"><img loading="lazy" src="img/3/WARS-EN03003.jpg"></div>
+		<div class="card set-3 faction-earther type-asset stockpile"><img loading="lazy" src="img/3/WARS-EN03003.jpg"></div>
 		<div class="card set-3 faction-earther type-asset"><img loading="lazy" src="img/3/WARS-EN03004.jpg"></div>
 		<div class="card set-3 faction-earther type-asset"><img loading="lazy" src="img/3/WARS-EN03005.jpg"></div>
-		<div class="card set-3 faction-earther type-character"><img loading="lazy" src="img/3/WARS-EN03006.jpg"></div>
-		<div class="card set-3 faction-earther type-vehicle"><img loading="lazy" src="img/3/WARS-EN03007.jpg"></div>
-		<div class="card set-3 faction-earther type-character"><img loading="lazy" src="img/3/WARS-EN03008.jpg"></div>
-		<div class="card set-3 faction-earther type-character"><img loading="lazy" src="img/3/WARS-EN03009.jpg"></div>
-		<div class="card set-3 faction-earther type-character"><img loading="lazy" src="img/3/WARS-EN03010.jpg"></div>
+		<div class="card set-3 faction-earther type-character icom infiltrator unit"><img loading="lazy" src="img/3/WARS-EN03006.jpg"></div>
+		<div class="card set-3 faction-earther type-vehicle fedgrav unit"><img loading="lazy" src="img/3/WARS-EN03007.jpg"></div>
+		<div class="card set-3 faction-earther type-character icom inverter unit"><img loading="lazy" src="img/3/WARS-EN03008.jpg"></div>
+		<div class="card set-3 faction-earther type-character icom tech unit"><img loading="lazy" src="img/3/WARS-EN03009.jpg"></div>
+		<div class="card set-3 faction-earther type-character fedgrav tech unit"><img loading="lazy" src="img/3/WARS-EN03010.jpg"></div>
 		<div class="card set-3 faction-earther type-asset"><img loading="lazy" src="img/3/WARS-EN03011.jpg"></div>
-		<div class="card set-3 faction-earther type-character"><img loading="lazy" src="img/3/WARS-EN03012.jpg"></div>
-		<div class="card set-3 faction-earther type-character"><img loading="lazy" src="img/3/WARS-EN03013.jpg"></div>
+		<div class="card set-3 faction-earther type-character icom warrior unit"><img loading="lazy" src="img/3/WARS-EN03012.jpg"></div>
+		<div class="card set-3 faction-earther type-character kizen icom unit"><img loading="lazy" src="img/3/WARS-EN03013.jpg"></div>
 		<div class="card set-3 faction-earther type-asset"><img loading="lazy" src="img/3/WARS-EN03014.jpg"></div>
 		<div class="card set-3 faction-earther type-interrupt"><img loading="lazy" src="img/3/WARS-EN03015.jpg"></div>
-		<div class="card set-3 faction-earther type-ship"><img loading="lazy" src="img/3/WARS-EN03016.jpg"></div>
+		<div class="card set-3 faction-earther type-ship icom fighter"><img loading="lazy" src="img/3/WARS-EN03016.jpg"></div>
 		<div class="card set-3 faction-earther type-asset"><img loading="lazy" src="img/3/WARS-EN03017.jpg"></div>
 		<div class="card set-3 faction-earther type-asset"><img loading="lazy" src="img/3/WARS-EN03018.jpg"></div>
-		<div class="card set-3 faction-earther type-ship"><img loading="lazy" src="img/3/WARS-EN03019.jpg"></div>
-		<div class="card set-3 faction-earther type-ship"><img loading="lazy" src="img/3/WARS-EN03020.jpg"></div>
-		<div class="card set-3 faction-earther type-vehicle"><img loading="lazy" src="img/3/WARS-EN03021.jpg"></div>
-		<div class="card set-3 faction-earther type-vehicle"><img loading="lazy" src="img/3/WARS-EN03022.jpg"></div>
-		<div class="card set-3 faction-earther type-character"><img loading="lazy" src="img/3/WARS-EN03023.jpg"></div>
-		<div class="card set-3 faction-earther type-character"><img loading="lazy" src="img/3/WARS-EN03024.jpg"></div>
-		<div class="card set-3 faction-earther type-ship"><img loading="lazy" src="img/3/WARS-EN03025.jpg"></div>
-		<div class="card set-3 faction-earther type-character"><img loading="lazy" src="img/3/WARS-EN03026.jpg"></div>
-		<div class="card set-3 faction-earther type-vehicle"><img loading="lazy" src="img/3/WARS-EN03027.jpg"></div>
+		<div class="card set-3 faction-earther type-ship icom fighter"><img loading="lazy" src="img/3/WARS-EN03019.jpg"></div>
+		<div class="card set-3 faction-earther type-ship icom fighter"><img loading="lazy" src="img/3/WARS-EN03020.jpg"></div>
+		<div class="card set-3 faction-earther type-vehicle fedgrav inverter unit"><img loading="lazy" src="img/3/WARS-EN03021.jpg"></div>
+		<div class="card set-3 faction-earther type-vehicle fedgrav unit"><img loading="lazy" src="img/3/WARS-EN03022.jpg"></div>
+		<div class="card set-3 faction-earther type-character icom tech unit"><img loading="lazy" src="img/3/WARS-EN03023.jpg"></div>
+		<div class="card set-3 faction-earther type-character fedgrav inverter unit"><img loading="lazy" src="img/3/WARS-EN03024.jpg"></div>
+		<div class="card set-3 faction-earther type-ship fedgrav capital"><img loading="lazy" src="img/3/WARS-EN03025.jpg"></div>
+		<div class="card set-3 faction-earther type-character icom tech unit"><img loading="lazy" src="img/3/WARS-EN03026.jpg"></div>
+		<div class="card set-3 faction-earther type-vehicle fedgrav unit"><img loading="lazy" src="img/3/WARS-EN03027.jpg"></div>
 		<div class="card set-3 faction-earther type-asset"><img loading="lazy" src="img/3/WARS-EN03028.jpg"></div>
-		<div class="card set-3 faction-earther type-weapon"><img loading="lazy" src="img/3/WARS-EN03029.jpg"></div>
+		<div class="card set-3 faction-earther type-weapon ranged"><img loading="lazy" src="img/3/WARS-EN03029.jpg"></div>
 		<div class="card set-3 faction-earther type-interrupt"><img loading="lazy" src="img/3/WARS-EN03030.jpg"></div>
 		<div class="card set-3 faction-gongen type-order"><img loading="lazy" src="img/3/WARS-EN03031.jpg"></div>
 		<div class="card set-3 faction-gongen type-asset"><img loading="lazy" src="img/3/WARS-EN03032.jpg"></div>
-		<div class="card set-3 faction-gongen type-asset"><img loading="lazy" src="img/3/WARS-EN03033.jpg"></div>
+		<div class="card set-3 faction-gongen type-asset stockpile"><img loading="lazy" src="img/3/WARS-EN03033.jpg"></div>
 		<div class="card set-3 faction-gongen type-interrupt"><img loading="lazy" src="img/3/WARS-EN03034.jpg"></div>
-		<div class="card set-3 faction-gongen type-ship"><img loading="lazy" src="img/3/WARS-EN03035.jpg"></div>
-		<div class="card set-3 faction-gongen type-character"><img loading="lazy" src="img/3/WARS-EN03036.jpg"></div>
+		<div class="card set-3 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/3/WARS-EN03035.jpg"></div>
+		<div class="card set-3 faction-gongen type-character tenno tech unit"><img loading="lazy" src="img/3/WARS-EN03036.jpg"></div>
 		<div class="card set-3 faction-gongen type-asset"><img loading="lazy" src="img/3/WARS-EN03037.jpg"></div>
 		<div class="card set-3 faction-gongen type-asset"><img loading="lazy" src="img/3/WARS-EN03038.jpg"></div>
-		<div class="card set-3 faction-gongen type-weapon"><img loading="lazy" src="img/3/WARS-EN03039.jpg"></div>
-		<div class="card set-3 faction-gongen type-ship"><img loading="lazy" src="img/3/WARS-EN03040.jpg"></div>
-		<div class="card set-3 faction-gongen type-character"><img loading="lazy" src="img/3/WARS-EN03041.jpg"></div>
-		<div class="card set-3 faction-gongen type-character"><img loading="lazy" src="img/3/WARS-EN03042.jpg"></div>
+		<div class="card set-3 faction-gongen type-weapon explosive"><img loading="lazy" src="img/3/WARS-EN03039.jpg"></div>
+		<div class="card set-3 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/3/WARS-EN03040.jpg"></div>
+		<div class="card set-3 faction-gongen type-character shikami warrior unit"><img loading="lazy" src="img/3/WARS-EN03041.jpg"></div>
+		<div class="card set-3 faction-gongen type-character bot tech unit"><img loading="lazy" src="img/3/WARS-EN03042.jpg"></div>
 		<div class="card set-3 faction-gongen type-asset"><img loading="lazy" src="img/3/WARS-EN03043.jpg"></div>
-		<div class="card set-3 faction-gongen type-character"><img loading="lazy" src="img/3/WARS-EN03044.jpg"></div>
+		<div class="card set-3 faction-gongen type-character tenno warrior unit"><img loading="lazy" src="img/3/WARS-EN03044.jpg"></div>
 		<div class="card set-3 faction-gongen type-interrupt"><img loading="lazy" src="img/3/WARS-EN03045.jpg"></div>
-		<div class="card set-3 faction-gongen type-character"><img loading="lazy" src="img/3/WARS-EN03046.jpg"></div>
+		<div class="card set-3 faction-gongen type-character shikami kizen unit"><img loading="lazy" src="img/3/WARS-EN03046.jpg"></div>
 		<div class="card set-3 faction-gongen type-order"><img loading="lazy" src="img/3/WARS-EN03047.jpg"></div>
-		<div class="card set-3 faction-gongen type-character"><img loading="lazy" src="img/3/WARS-EN03048.jpg"></div>
-		<div class="card set-3 faction-gongen type-ship"><img loading="lazy" src="img/3/WARS-EN03049.jpg"></div>
+		<div class="card set-3 faction-gongen type-character shikami warrior unit"><img loading="lazy" src="img/3/WARS-EN03048.jpg"></div>
+		<div class="card set-3 faction-gongen type-ship tenno fighter"><img loading="lazy" src="img/3/WARS-EN03049.jpg"></div>
 		<div class="card set-3 faction-gongen type-asset"><img loading="lazy" src="img/3/WARS-EN03050.jpg"></div>
-		<div class="card set-3 faction-gongen type-character"><img loading="lazy" src="img/3/WARS-EN03051.jpg"></div>
+		<div class="card set-3 faction-gongen type-character shikami interver tech unit"><img loading="lazy" src="img/3/WARS-EN03051.jpg"></div>
 		<div class="card set-3 faction-gongen type-asset"><img loading="lazy" src="img/3/WARS-EN03052.jpg"></div>
-		<div class="card set-3 faction-gongen type-character"><img loading="lazy" src="img/3/WARS-EN03053.jpg"></div>
-		<div class="card set-3 faction-gongen type-character"><img loading="lazy" src="img/3/WARS-EN03054.jpg"></div>
-		<div class="card set-3 faction-gongen type-vehicle"><img loading="lazy" src="img/3/WARS-EN03055.jpg"></div>
-		<div class="card set-3 faction-gongen type-ship"><img loading="lazy" src="img/3/WARS-EN03056.jpg"></div>
-		<div class="card set-3 faction-gongen type-ship"><img loading="lazy" src="img/3/WARS-EN03057.jpg"></div>
+		<div class="card set-3 faction-gongen type-character tenno tech unit"><img loading="lazy" src="img/3/WARS-EN03053.jpg"></div>
+		<div class="card set-3 faction-gongen type-character shikami tech unit"><img loading="lazy" src="img/3/WARS-EN03054.jpg"></div>
+		<div class="card set-3 faction-gongen type-vehicle shikami unit"><img loading="lazy" src="img/3/WARS-EN03055.jpg"></div>
+		<div class="card set-3 faction-gongen type-ship tenno capital"><img loading="lazy" src="img/3/WARS-EN03056.jpg"></div>
+		<div class="card set-3 faction-gongen type-ship tenno capital"><img loading="lazy" src="img/3/WARS-EN03057.jpg"></div>
 		<div class="card set-3 faction-gongen type-interrupt"><img loading="lazy" src="img/3/WARS-EN03058.jpg"></div>
-		<div class="card set-3 faction-gongen type-vehicle"><img loading="lazy" src="img/3/WARS-EN03059.jpg"></div>
-		<div class="card set-3 faction-gongen type-nobot"><img loading="lazy" src="img/3/WARS-EN03060.jpg"></div>
+		<div class="card set-3 faction-gongen type-vehicle shikami unit"><img loading="lazy" src="img/3/WARS-EN03059.jpg"></div>
+		<div class="card set-3 faction-gongen type-nobot shikami bot unit"><img loading="lazy" src="img/3/WARS-EN03060.jpg"></div>
 		<div class="card set-3 faction-maverick type-order"><img loading="lazy" src="img/3/WARS-EN03061.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03062.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03063.jpg"></div>
-		<div class="card set-3 faction-maverick type-ship"><img loading="lazy" src="img/3/WARS-EN03064.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03065.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03066.jpg"></div>
+		<div class="card set-3 faction-maverick type-character accord warrior unit"><img loading="lazy" src="img/3/WARS-EN03062.jpg"></div>
+		<div class="card set-3 faction-maverick type-character nest rogue unit"><img loading="lazy" src="img/3/WARS-EN03063.jpg"></div>
+		<div class="card set-3 faction-maverick type-ship accord fighter"><img loading="lazy" src="img/3/WARS-EN03064.jpg"></div>
+		<div class="card set-3 faction-maverick type-character nest rogue unit"><img loading="lazy" src="img/3/WARS-EN03065.jpg"></div>
+		<div class="card set-3 faction-maverick type-character nest rogue unit"><img loading="lazy" src="img/3/WARS-EN03066.jpg"></div>
 		<div class="card set-3 faction-maverick type-asset"><img loading="lazy" src="img/3/WARS-EN03067.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03068.jpg"></div>
-		<div class="card set-3 faction-maverick type-asset"><img loading="lazy" src="img/3/WARS-EN03069.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03070.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03071.jpg"></div>
-		<div class="card set-3 faction-maverick type-asset"><img loading="lazy" src="img/3/WARS-EN03072.jpg"></div>
-		<div class="card set-3 faction-maverick type-asset"><img loading="lazy" src="img/3/WARS-EN03073.jpg"></div>
-		<div class="card set-3 faction-maverick type-asset"><img loading="lazy" src="img/3/WARS-EN03074.jpg"></div>
-		<div class="card set-3 faction-maverick type-ship"><img loading="lazy" src="img/3/WARS-EN03075.jpg"></div>
+		<div class="card set-3 faction-maverick type-character accord warrior unit"><img loading="lazy" src="img/3/WARS-EN03068.jpg"></div>
+		<div class="card set-3 faction-maverick type-asset stockpile"><img loading="lazy" src="img/3/WARS-EN03069.jpg"></div>
+		<div class="card set-3 faction-maverick type-character rogue unit"><img loading="lazy" src="img/3/WARS-EN03070.jpg"></div>
+		<div class="card set-3 faction-maverick type-character nest merchant rogue unit"><img loading="lazy" src="img/3/WARS-EN03071.jpg"></div>
+		<div class="card set-3 faction-maverick type-asset evidence"><img loading="lazy" src="img/3/WARS-EN03072.jpg"></div>
+		<div class="card set-3 faction-maverick type-asset evidence"><img loading="lazy" src="img/3/WARS-EN03073.jpg"></div>
+		<div class="card set-3 faction-maverick type-asset evidence"><img loading="lazy" src="img/3/WARS-EN03074.jpg"></div>
+		<div class="card set-3 faction-maverick type-ship accord fighter"><img loading="lazy" src="img/3/WARS-EN03075.jpg"></div>
 		<div class="card set-3 faction-maverick type-interrupt"><img loading="lazy" src="img/3/WARS-EN03076.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03077.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03078.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03079.jpg"></div>
-		<div class="card set-3 faction-maverick type-ship"><img loading="lazy" src="img/3/WARS-EN03080.jpg"></div>
-		<div class="card set-3 faction-maverick type-weapon"><img loading="lazy" src="img/3/WARS-EN03081.jpg"></div>
+		<div class="card set-3 faction-maverick type-character accord warrior unit"><img loading="lazy" src="img/3/WARS-EN03077.jpg"></div>
+		<div class="card set-3 faction-maverick type-character nest rogue unit"><img loading="lazy" src="img/3/WARS-EN03078.jpg"></div>
+		<div class="card set-3 faction-maverick type-character inverter nest unit"><img loading="lazy" src="img/3/WARS-EN03079.jpg"></div>
+		<div class="card set-3 faction-maverick type-ship nest capital"><img loading="lazy" src="img/3/WARS-EN03080.jpg"></div>
+		<div class="card set-3 faction-maverick type-weapon melee"><img loading="lazy" src="img/3/WARS-EN03081.jpg"></div>
 		<div class="card set-3 faction-maverick type-asset"><img loading="lazy" src="img/3/WARS-EN03082.jpg"></div>
 		<div class="card set-3 faction-maverick type-asset"><img loading="lazy" src="img/3/WARS-EN03083.jpg"></div>
 		<div class="card set-3 faction-maverick type-asset"><img loading="lazy" src="img/3/WARS-EN03084.jpg"></div>
-		<div class="card set-3 faction-maverick type-ship"><img loading="lazy" src="img/3/WARS-EN03085.jpg"></div>
-		<div class="card set-3 faction-maverick type-character"><img loading="lazy" src="img/3/WARS-EN03086.jpg"></div>
-		<div class="card set-3 faction-maverick type-ship"><img loading="lazy" src="img/3/WARS-EN03087.jpg"></div>
+		<div class="card set-3 faction-maverick type-ship accord fighter"><img loading="lazy" src="img/3/WARS-EN03085.jpg"></div>
+		<div class="card set-3 faction-maverick type-character kizen accord warrior unit"><img loading="lazy" src="img/3/WARS-EN03086.jpg"></div>
+		<div class="card set-3 faction-maverick type-ship accord fighter"><img loading="lazy" src="img/3/WARS-EN03087.jpg"></div>
 		<div class="card set-3 faction-maverick type-interrupt"><img loading="lazy" src="img/3/WARS-EN03088.jpg"></div>
 		<div class="card set-3 faction-maverick type-interrupt"><img loading="lazy" src="img/3/WARS-EN03089.jpg"></div>
 		<div class="card set-3 faction-maverick type-asset"><img loading="lazy" src="img/3/WARS-EN03090.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03091.jpg"></div>
+		<div class="card set-3 faction-shi type-character sudeva tech unit"><img loading="lazy" src="img/3/WARS-EN03091.jpg"></div>
 		<div class="card set-3 faction-shi type-order"><img loading="lazy" src="img/3/WARS-EN03092.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03093.jpg"></div>
+		<div class="card set-3 faction-shi type-character damir tech unit"><img loading="lazy" src="img/3/WARS-EN03093.jpg"></div>
 		<div class="card set-3 faction-shi type-asset"><img loading="lazy" src="img/3/WARS-EN03094.jpg"></div>
-		<div class="card set-3 faction-shi type-weapon"><img loading="lazy" src="img/3/WARS-EN03095.jpg"></div>
-		<div class="card set-3 faction-shi type-asset"><img loading="lazy" src="img/3/WARS-EN03096.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03097.jpg"></div>
-		<div class="card set-3 faction-shi type-ship"><img loading="lazy" src="img/3/WARS-EN03098.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03099.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03100.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03101.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03102.jpg"></div>
+		<div class="card set-3 faction-shi type-weapon ranged"><img loading="lazy" src="img/3/WARS-EN03095.jpg"></div>
+		<div class="card set-3 faction-shi type-asset stockpile"><img loading="lazy" src="img/3/WARS-EN03096.jpg"></div>
+		<div class="card set-3 faction-shi type-character sudeva inverter unit"><img loading="lazy" src="img/3/WARS-EN03097.jpg"></div>
+		<div class="card set-3 faction-shi type-ship sudeva fighter"><img loading="lazy" src="img/3/WARS-EN03098.jpg"></div>
+		<div class="card set-3 faction-shi type-character crown sudeva predator unit"><img loading="lazy" src="img/3/WARS-EN03099.jpg"></div>
+		<div class="card set-3 faction-shi type-character damir crown unit"><img loading="lazy" src="img/3/WARS-EN03100.jpg"></div>
+		<div class="card set-3 faction-shi type-character kizen damir warrior unit"><img loading="lazy" src="img/3/WARS-EN03101.jpg"></div>
+		<div class="card set-3 faction-shi type-character kizen crown damir unit"><img loading="lazy" src="img/3/WARS-EN03102.jpg"></div>
 		<div class="card set-3 faction-shi type-interrupt"><img loading="lazy" src="img/3/WARS-EN03103.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03104.jpg"></div>
+		<div class="card set-3 faction-shi type-character damir merchant unit"><img loading="lazy" src="img/3/WARS-EN03104.jpg"></div>
 		<div class="card set-3 faction-shi type-interrupt"><img loading="lazy" src="img/3/WARS-EN03105.jpg"></div>
 		<div class="card set-3 faction-shi type-interrupt"><img loading="lazy" src="img/3/WARS-EN03106.jpg"></div>
 		<div class="card set-3 faction-shi type-interrupt"><img loading="lazy" src="img/3/WARS-EN03107.jpg"></div>
-		<div class="card set-3 faction-shi type-ship"><img loading="lazy" src="img/3/WARS-EN03108.jpg"></div>
+		<div class="card set-3 faction-shi type-ship damir capital"><img loading="lazy" src="img/3/WARS-EN03108.jpg"></div>
 		<div class="card set-3 faction-shi type-order"><img loading="lazy" src="img/3/WARS-EN03109.jpg"></div>
 		<div class="card set-3 faction-shi type-asset"><img loading="lazy" src="img/3/WARS-EN03110.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03111.jpg"></div>
+		<div class="card set-3 faction-shi type-ship sudeva inverter capital"><img loading="lazy" src="img/3/WARS-EN03111.jpg"></div>
 		<div class="card set-3 faction-shi type-interrupt"><img loading="lazy" src="img/3/WARS-EN03112.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03113.jpg"></div>
+		<div class="card set-3 faction-shi type-character kizen crown damir unit"><img loading="lazy" src="img/3/WARS-EN03113.jpg"></div>
 		<div class="card set-3 faction-shi type-interrupt"><img loading="lazy" src="img/3/WARS-EN03114.jpg"></div>
-		<div class="card set-3 faction-shi type-ship"><img loading="lazy" src="img/3/WARS-EN03115.jpg"></div>
+		<div class="card set-3 faction-shi type-ship damir fighter"><img loading="lazy" src="img/3/WARS-EN03115.jpg"></div>
 		<div class="card set-3 faction-shi type-interrupt"><img loading="lazy" src="img/3/WARS-EN03116.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03117.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03118.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03119.jpg"></div>
+		<div class="card set-3 faction-shi type-character sudeva crown unit"><img loading="lazy" src="img/3/WARS-EN03117.jpg"></div>
+		<div class="card set-3 faction-shi type-character kizen crown sudeva unit"><img loading="lazy" src="img/3/WARS-EN03118.jpg"></div>
+		<div class="card set-3 faction-shi type-ship damir fighter"><img loading="lazy" src="img/3/WARS-EN03119.jpg"></div>
 		<div class="card set-3 faction-quay type-order"><img loading="lazy" src="img/3/WARS-EN03120.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03121.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03122.jpg"></div>
+		<div class="card set-3 faction-quay type-character kizen makal predator unit"><img loading="lazy" src="img/3/WARS-EN03121.jpg"></div>
+		<div class="card set-3 faction-quay type-character kizen qurim unit"><img loading="lazy" src="img/3/WARS-EN03122.jpg"></div>
 		<div class="card set-3 faction-quay type-asset"><img loading="lazy" src="img/3/WARS-EN03123.jpg"></div>
 		<div class="card set-3 faction-quay type-order"><img loading="lazy" src="img/3/WARS-EN03124.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03125.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03126.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03127.jpg"></div>
-		<div class="card set-3 faction-quay type-asset"><img loading="lazy" src="img/3/WARS-EN03128.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03129.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03130.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03131.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03132.jpg"></div>
+		<div class="card set-3 faction-quay type-character makal inverter unit"><img loading="lazy" src="img/3/WARS-EN03125.jpg"></div>
+		<div class="card set-3 faction-quay type-character qurim tech unit"><img loading="lazy" src="img/3/WARS-EN03126.jpg"></div>
+		<div class="card set-3 faction-quay type-character katal inverter unit"><img loading="lazy" src="img/3/WARS-EN03127.jpg"></div>
+		<div class="card set-3 faction-quay type-asset stockpile"><img loading="lazy" src="img/3/WARS-EN03128.jpg"></div>
+		<div class="card set-3 faction-quay type-character katal predator unit"><img loading="lazy" src="img/3/WARS-EN03129.jpg"></div>
+		<div class="card set-3 faction-quay type-character makal predator unit"><img loading="lazy" src="img/3/WARS-EN03130.jpg"></div>
+		<div class="card set-3 faction-quay type-character qurim tech unit"><img loading="lazy" src="img/3/WARS-EN03131.jpg"></div>
+		<div class="card set-3 faction-quay type-character katal predator unit"><img loading="lazy" src="img/3/WARS-EN03132.jpg"></div>
 		<div class="card set-3 faction-quay type-asset"><img loading="lazy" src="img/3/WARS-EN03133.jpg"></div>
-		<div class="card set-3 faction-quay type-weapon"><img loading="lazy" src="img/3/WARS-EN03134.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03135.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03136.jpg"></div>
+		<div class="card set-3 faction-quay type-weapon ranged"><img loading="lazy" src="img/3/WARS-EN03134.jpg"></div>
+		<div class="card set-3 faction-quay type-character makal predator unit"><img loading="lazy" src="img/3/WARS-EN03135.jpg"></div>
+		<div class="card set-3 faction-quay type-character makal predator unit"><img loading="lazy" src="img/3/WARS-EN03136.jpg"></div>
 		<div class="card set-3 faction-quay type-interrupt"><img loading="lazy" src="img/3/WARS-EN03137.jpg"></div>
 		<div class="card set-3 faction-quay type-asset"><img loading="lazy" src="img/3/WARS-EN03138.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03139.jpg"></div>
+		<div class="card set-3 faction-quay type-character kizen makal predator unit"><img loading="lazy" src="img/3/WARS-EN03139.jpg"></div>
 		<div class="card set-3 faction-quay type-interrupt"><img loading="lazy" src="img/3/WARS-EN03140.jpg"></div>
 		<div class="card set-3 faction-quay type-interrupt"><img loading="lazy" src="img/3/WARS-EN03141.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03142.jpg"></div>
+		<div class="card set-3 faction-quay type-character katal predator unit"><img loading="lazy" src="img/3/WARS-EN03142.jpg"></div>
 		<div class="card set-3 faction-quay type-interrupt"><img loading="lazy" src="img/3/WARS-EN03143.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03144.jpg"></div>
-		<div class="card set-3 faction-quay type-ship"><img loading="lazy" src="img/3/WARS-EN03145.jpg"></div>
-		<div class="card set-3 faction-quay type-ship"><img loading="lazy" src="img/3/WARS-EN03146.jpg"></div>
-		<div class="card set-3 faction-quay type-ship"><img loading="lazy" src="img/3/WARS-EN03147.jpg"></div>
-		<div class="card set-3 faction-quay type-ship"><img loading="lazy" src="img/3/WARS-EN03148.jpg"></div>
-		<div class="card set-3 faction-quay type-ship"><img loading="lazy" src="img/3/WARS-EN03149.jpg"></div>
-		<div class="card set-3 faction-independent type-asset"><img loading="lazy" src="img/3/WARS-EN03150.jpg"></div>
-		<div class="card set-3 faction-independent type-ship"><img loading="lazy" src="img/3/WARS-EN03151.jpg"></div>
-		<div class="card set-3 faction-independent type-asset"><img loading="lazy" src="img/3/WARS-EN03152.jpg"></div>
-		<div class="card set-3 faction-independent type-character"><img loading="lazy" src="img/3/WARS-EN03153.jpg"></div>
-		<div class="card set-3 faction-independent type-weapon"><img loading="lazy" src="img/3/WARS-EN03154.jpg"></div>
-		<div class="card set-3 faction-independent type-ship"><img loading="lazy" src="img/3/WARS-EN03155.jpg"></div>
-		<div class="card set-3 faction-independent type-character"><img loading="lazy" src="img/3/WARS-EN03156.jpg"></div>
+		<div class="card set-3 faction-quay type-character katal inverter unit"><img loading="lazy" src="img/3/WARS-EN03144.jpg"></div>
+		<div class="card set-3 faction-quay type-ship qurim fighter"><img loading="lazy" src="img/3/WARS-EN03145.jpg"></div>
+		<div class="card set-3 faction-quay type-ship katal capital"><img loading="lazy" src="img/3/WARS-EN03146.jpg"></div>
+		<div class="card set-3 faction-quay type-ship qurim fighter"><img loading="lazy" src="img/3/WARS-EN03147.jpg"></div>
+		<div class="card set-3 faction-quay type-ship qurim capital"><img loading="lazy" src="img/3/WARS-EN03148.jpg"></div>
+		<div class="card set-3 faction-quay type-ship qurim capital"><img loading="lazy" src="img/3/WARS-EN03149.jpg"></div>
+		<div class="card set-3 faction-independent type-asset relic"><img loading="lazy" src="img/3/WARS-EN03150.jpg"></div>
+		<div class="card set-3 faction-independent type-ship fighter"><img loading="lazy" src="img/3/WARS-EN03151.jpg"></div>
+		<div class="card set-3 faction-independent type-asset relic"><img loading="lazy" src="img/3/WARS-EN03152.jpg"></div>
+		<div class="card set-3 faction-independent type-character predator warrior unit"><img loading="lazy" src="img/3/WARS-EN03153.jpg"></div>
+		<div class="card set-3 faction-independent type-weapon melee ranged"><img loading="lazy" src="img/3/WARS-EN03154.jpg"></div>
+		<div class="card set-3 faction-independent type-ship capital"><img loading="lazy" src="img/3/WARS-EN03155.jpg"></div>
+		<div class="card set-3 faction-independent type-character warrior unit"><img loading="lazy" src="img/3/WARS-EN03156.jpg"></div>
 		<div class="card set-3 faction- type-location"><img loading="lazy" src="img/3/WARS-EN03157.jpg"></div>
 		<div class="lcard set-3 faction- type-location"><img loading="lazy" src="img/3/WARS-EN03158.jpg"></div>
 		<div class="card set-3 faction- type-location"><img loading="lazy" src="img/3/WARS-EN03159.jpg"></div>
@@ -727,14 +838,14 @@
 		<div class="card set-3 faction- type-location"><img loading="lazy" src="img/3/WARS-EN03163.jpg"></div>
 		<div class="card set-3 faction- type-location"><img loading="lazy" src="img/3/WARS-EN03164.jpg"></div>
 		<div class="card set-3 faction- type-location"><img loading="lazy" src="img/3/WARS-EN03165.jpg"></div>
-		<div class="card set-3 faction-earther type-ship"><img loading="lazy" src="img/3/WARS-EN03P01.jpg"></div>
-		<div class="card set-3 faction-maverick type-ship"><img loading="lazy" src="img/3/WARS-EN03P02.jpg"></div>
+		<div class="card set-3 faction-earther type-ship icom capital"><img loading="lazy" src="img/3/WARS-EN03P01.jpg"></div>
+		<div class="card set-3 faction-maverick type-ship accord capital"><img loading="lazy" src="img/3/WARS-EN03P02.jpg"></div>
 		<div class="card set-3 faction-gongen type-asset"><img loading="lazy" src="img/3/WARS-EN03F01.jpg"></div>
-		<div class="card set-3 faction-shi type-character"><img loading="lazy" src="img/3/WARS-EN03F02.jpg"></div>
-		<div class="card set-3 faction-quay type-character"><img loading="lazy" src="img/3/WARS-EN03F03.jpg"></div>
+		<div class="card set-3 faction-shi type-character damir merchant unit"><img loading="lazy" src="img/3/WARS-EN03F02.jpg"></div>
+		<div class="card set-3 faction-quay type-character qurim inverter unit"><img loading="lazy" src="img/3/WARS-EN03F03.jpg"></div>
 
 	<!-- SET 4: MIND -->
-		<div class="card set-4 faction-independent type-character"><img loading="lazy" src="img/4/WARS-EN04F01.jpg"></div>
+		<div class="card set-4 faction-independent type-character rogue unit"><img loading="lazy" src="img/4/WARS-EN04F01.jpg"></div>
 
 	</div>
 
