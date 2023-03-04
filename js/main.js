@@ -25,6 +25,17 @@ function select_all_sets() {
     }
 }
 
+function hideSubfilters() {
+        document.getElementById("weapon-tags").style.display = "none";
+        document.getElementById("asset-tags").style.display = "none";
+        document.getElementById("earther-tags").style.display = "none";
+        document.getElementById("gongen-tags").style.display = "none";
+        document.getElementById("maverick-tags").style.display = "none";
+        document.getElementById("shi-tags").style.display = "none";
+        document.getElementById("quay-tags").style.display = "none";
+        document.getElementById("independent-tags").style.display = "none";
+    }
+
 function subselect() {
     document.getElementById("weapon-tags").selectedIndex = 0;
     document.getElementById("asset-tags").selectedIndex = 0;
@@ -35,94 +46,39 @@ function subselect() {
     document.getElementById("quay-tags").selectedIndex = 0;
     document.getElementById("independent-tags").selectedIndex = 0;
     if (document.getElementById("select-type").value == ".type-weapon") {
-        document.getElementById("asset-tags").style.display = "none";
+        hideSubfilters();
         document.getElementById("weapon-tags").style.display = "inline-block";
-        document.getElementById("earther-tags").style.display = "none";
-        document.getElementById("gongen-tags").style.display = "none";
-        document.getElementById("maverick-tags").style.display = "none";
-        document.getElementById("shi-tags").style.display = "none";
-        document.getElementById("quay-tags").style.display = "none";
-        document.getElementById("independent-tags").style.display = "none";
     } else if (document.getElementById("select-type").value == ".type-asset") {
+        hideSubfilters();
         document.getElementById("asset-tags").style.display = "inline-block";
-        document.getElementById("weapon-tags").style.display = "none";
-        document.getElementById("earther-tags").style.display = "none";
-        document.getElementById("gongen-tags").style.display = "none";
-        document.getElementById("maverick-tags").style.display = "none";
-        document.getElementById("shi-tags").style.display = "none";
-        document.getElementById("quay-tags").style.display = "none";
-        document.getElementById("independent-tags").style.display = "none";
     } else {
     switch (document.getElementById("select-faction").value) {
     case ".faction-earther":
-        document.getElementById("weapon-tags").style.display = "none";
-        document.getElementById("asset-tags").style.display = "none";
+        hideSubfilters();
         document.getElementById("earther-tags").style.display = "inline-block";
-        document.getElementById("gongen-tags").style.display = "none";
-        document.getElementById("maverick-tags").style.display = "none";
-        document.getElementById("shi-tags").style.display = "none";
-        document.getElementById("quay-tags").style.display = "none";
-        document.getElementById("independent-tags").style.display = "none";
         break;
     case ".faction-gongen":
-        document.getElementById("weapon-tags").style.display = "none";
-        document.getElementById("asset-tags").style.display = "none";
-        document.getElementById("earther-tags").style.display = "none";
+        hideSubfilters();
         document.getElementById("gongen-tags").style.display = "inline-block";
-        document.getElementById("maverick-tags").style.display = "none";
-        document.getElementById("shi-tags").style.display = "none";
-        document.getElementById("quay-tags").style.display = "none";
-        document.getElementById("independent-tags").style.display = "none";
         break;
     case ".faction-maverick":
-        document.getElementById("weapon-tags").style.display = "none";
-        document.getElementById("asset-tags").style.display = "none";
-        document.getElementById("earther-tags").style.display = "none";
-        document.getElementById("gongen-tags").style.display = "none";
+        hideSubfilters();
         document.getElementById("maverick-tags").style.display = "inline-block";
-        document.getElementById("shi-tags").style.display = "none";
-        document.getElementById("quay-tags").style.display = "none";
-        document.getElementById("independent-tags").style.display = "none";
        break;
     case ".faction-shi":
-        document.getElementById("weapon-tags").style.display = "none";
-        document.getElementById("asset-tags").style.display = "none";
-        document.getElementById("earther-tags").style.display = "none";
-        document.getElementById("gongen-tags").style.display = "none";
-        document.getElementById("maverick-tags").style.display = "none";
+        hideSubfilters();
         document.getElementById("shi-tags").style.display = "inline-block";
-        document.getElementById("quay-tags").style.display = "none";
-        document.getElementById("independent-tags").style.display = "none";
         break; 
     case ".faction-quay":
-        document.getElementById("weapon-tags").style.display = "none";
-        document.getElementById("asset-tags").style.display = "none";
-        document.getElementById("earther-tags").style.display = "none";
-        document.getElementById("gongen-tags").style.display = "none";
-        document.getElementById("maverick-tags").style.display = "none";
-        document.getElementById("shi-tags").style.display = "none";
+        hideSubfilters();
         document.getElementById("quay-tags").style.display = "inline-block";
-        document.getElementById("independent-tags").style.display = "none";
         break
     case ".faction-independent":
-        document.getElementById("weapon-tags").style.display = "none";
-        document.getElementById("asset-tags").style.display = "none";
-        document.getElementById("earther-tags").style.display = "none";
-        document.getElementById("gongen-tags").style.display = "none";
-        document.getElementById("maverick-tags").style.display = "none";
-        document.getElementById("shi-tags").style.display = "none";
-        document.getElementById("quay-tags").style.display = "none";
+        hideSubfilters();
         document.getElementById("independent-tags").style.display = "inline-block";
         break
     default:
-        document.getElementById("weapon-tags").style.display = "none";
-        document.getElementById("asset-tags").style.display = "none";
-        document.getElementById("earther-tags").style.display = "none";
-        document.getElementById("gongen-tags").style.display = "none";
-        document.getElementById("maverick-tags").style.display = "none";
-        document.getElementById("shi-tags").style.display = "none";
-        document.getElementById("quay-tags").style.display = "none";
-        document.getElementById("independent-tags").style.display = "none";
+        hideSubfilters();
     }
     }
 }
