@@ -63,6 +63,9 @@ select, button {
 }
 
 #card-container .card {
+    position: relative;
+    height: 350px;
+    width: 250px;
     display: none;
     margin: 10px;
     border-radius: 10px;
@@ -73,10 +76,12 @@ select, button {
 #card-container .card img {
     width: 250px;
     height: 350px;
-    margin: 0 0 -4px 0;
 }
 
 #card-container .lcard {
+    position: relative;
+    height: 250px;
+    width: 350px;
     display: none;
     border-radius: 10px;
     overflow: hidden;
@@ -96,5 +101,16 @@ select, button {
 #card-container .lcard img {
     width: 350px;
     height: 250px;
-    margin: 0 0 -4px 0;
+}
+
+.errata {
+    position: absolute;
+    background-color: white;
+    font-size: .7em;
+    font-family: Arial Narrow;
+    left: 25px;
+    right: 0;
+    bottom: 5px;
+    margin: 25px;
+    border: 1px solid;
 }
