@@ -21,7 +21,7 @@ The card database is contained within the html of the page. Images are stored in
 
 Code for the database was generated with an Excel formula to concatenate the div and image containers with the appropriate attributes from a table generated from the archive of Decipher's website on archive.org. An example is provided below for reference, where column C contains the card's number, column E contains the card's type, and column F contains the card's faction.
 
->```=concatenate("<div class=",char(34),"card set-1 faction-",lower(F2)," type-",lower(E2),char(34),"><img loading=",char(34),"lazy",char(34)," src=",char(34),"img/1/WARS-EN01",text(C2,"000"),".jpg",char(34),"></div>")
+	=concatenate("<div class=",char(34),"card set-1 faction-",lower(F2)," type-",lower(E2),char(34),"><img loading=",char(34),"lazy",char(34)," src=",char(34),"img/1/WARS-EN01",text(C2,"000"),".jpg",char(34),"></div>")
 
 ## Thanks
 Basic design approach and card styling css adapted from https://github.com/patrickgalbraith/zombicide-card-database.
