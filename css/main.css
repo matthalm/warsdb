@@ -5,7 +5,7 @@
     top: 0;
     display: block;
     text-align: center;
-    font-family: Arial Narrow;
+    font-family: Arial Narrow, Arial, sans-serif;
     font-size: 1.2em;
     font-weight: bold;
     margin: 10px;
@@ -21,7 +21,7 @@
 #controls {
     display: block;
     font-size: .8em;
-    font-family: Arial Narrow;
+    font-family: Arial Narrow, Arial, sans-serif;
     background-color: white;
     text-align: center;
 }
@@ -45,7 +45,7 @@ legend {
 select, button {
     padding: 2px;
     margin: 2px;
-    font-family: Arial Narrow;
+    font-family: Arial Narrow, Arial, sans-serif;
 }
 
 .subfilter {
@@ -107,7 +107,7 @@ select, button {
     position: absolute;
     background-color: white;
     font-size: .7em;
-    font-family: Arial Narrow;
+    font-family: Arial Narrow, Arial, sans-serif;
     left: 25px;
     right: 0;
     bottom: 5px;
