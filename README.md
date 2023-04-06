@@ -23,5 +23,8 @@ Code for the database was generated with an Excel formula to concatenate the div
 
 	=concatenate("<div class=",char(34),"card set-1 faction-",lower(F2)," type-",lower(E2),char(34),"><img loading=",char(34),"lazy",char(34)," src=",char(34),"img/1/WARS-EN01",text(C2,"000"),".jpg",char(34),"></div>")
 
+## See Also
+You might also like my Lord of the Rings TCG Database: https://github.com/matthalm/rudimentary-lotr-tcg-db.
+
 ## Thanks
 Basic design approach and card styling css adapted from https://github.com/patrickgalbraith/zombicide-card-database.
